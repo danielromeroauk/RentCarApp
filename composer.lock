@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "506440dad8310ea93d4bb002e1316b9c",
+    "hash": "e6dac6414f7b19a4249ce992b1c0e5c3",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1363,16 +1363,16 @@
         },
         {
             "name": "pingpong/generators",
-            "version": "2.0.6",
+            "version": "2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pingpong-labs/generators.git",
-                "reference": "d7ab18afdcc4285ce15410551118e5d149556fd4"
+                "reference": "5c4284f7b7d47b0a36922b0bc553bc38d5b23351"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pingpong-labs/generators/zipball/d7ab18afdcc4285ce15410551118e5d149556fd4",
-                "reference": "d7ab18afdcc4285ce15410551118e5d149556fd4",
+                "url": "https://api.github.com/repos/pingpong-labs/generators/zipball/5c4284f7b7d47b0a36922b0bc553bc38d5b23351",
+                "reference": "5c4284f7b7d47b0a36922b0bc553bc38d5b23351",
                 "shasum": ""
             },
             "require": {
@@ -1408,20 +1408,20 @@
                 "laravel",
                 "pingpong"
             ],
-            "time": "2015-05-19 16:24:09"
+            "time": "2015-06-05 07:04:03"
         },
         {
             "name": "pingpong/modules",
-            "version": "2.0.8",
+            "version": "2.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pingpong-labs/modules.git",
-                "reference": "73fe5156d6de24955c405150647513e54ee85fac"
+                "reference": "5a42e255347fe859756f82057a9875927dddafe8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/73fe5156d6de24955c405150647513e54ee85fac",
-                "reference": "73fe5156d6de24955c405150647513e54ee85fac",
+                "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/5a42e255347fe859756f82057a9875927dddafe8",
+                "reference": "5a42e255347fe859756f82057a9875927dddafe8",
                 "shasum": ""
             },
             "require": {
@@ -1436,12 +1436,6 @@
                 "phpunit/phpunit": "~4"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2-dev",
-                    "dev-develop": "1.3-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Pingpong\\Modules\\": ""
@@ -1465,20 +1459,20 @@
                 "modules",
                 "pingpong"
             ],
-            "time": "2015-05-22 06:42:54"
+            "time": "2015-06-07 05:20:39"
         },
         {
             "name": "pingpong/support",
-            "version": "2.0.8",
+            "version": "2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pingpong-labs/support.git",
-                "reference": "9401c19b1dbdff01606e7362b931fcffade38fb2"
+                "reference": "a2057526e0b3bfadbb50edda879b20f7acb7496b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pingpong-labs/support/zipball/9401c19b1dbdff01606e7362b931fcffade38fb2",
-                "reference": "9401c19b1dbdff01606e7362b931fcffade38fb2",
+                "url": "https://api.github.com/repos/pingpong-labs/support/zipball/a2057526e0b3bfadbb50edda879b20f7acb7496b",
+                "reference": "a2057526e0b3bfadbb50edda879b20f7acb7496b",
                 "shasum": ""
             },
             "require": {
@@ -1507,7 +1501,7 @@
                 }
             ],
             "description": "Support Component of Pingpong Sky Package",
-            "time": "2015-05-19 16:37:52"
+            "time": "2015-06-05 07:04:03"
         },
         {
             "name": "psr/log",
@@ -1620,23 +1614,23 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.0",
+            "version": "v5.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "31454f258f10329ae7c48763eb898a75c39e0a9f"
+                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/31454f258f10329ae7c48763eb898a75c39e0a9f",
-                "reference": "31454f258f10329ae7c48763eb898a75c39e0a9f",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/0697e6aa65c83edf97bb0f23d8763f94e3f11421",
+                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.1"
+                "mockery/mockery": "~0.9.1,<0.9.4"
             },
             "type": "library",
             "extra": {
@@ -1665,10 +1659,11 @@
             "description": "Swiftmailer, free feature-rich PHP mailer",
             "homepage": "http://swiftmailer.org",
             "keywords": [
+                "email",
                 "mail",
                 "mailer"
             ],
-            "time": "2015-03-14 06:06:39"
+            "time": "2015-06-06 14:19:39"
         },
         {
             "name": "symfony/console",
@@ -2705,16 +2700,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.1.2",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f"
+                "reference": "3703c4bb67c8700957dd41c843254658539d091d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f",
-                "reference": "6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/3703c4bb67c8700957dd41c843254658539d091d",
+                "reference": "3703c4bb67c8700957dd41c843254658539d091d",
                 "shasum": ""
             },
             "require": {
@@ -2763,7 +2758,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-01 07:35:26"
+            "time": "2015-06-06 08:33:23"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -2951,16 +2946,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.6.9",
+            "version": "4.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "816d12536a7a032adc3b68737f82cfbbf98b79c1"
+                "reference": "8e0c63329c8c4185296b8d357daa5c6bae43080f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/816d12536a7a032adc3b68737f82cfbbf98b79c1",
-                "reference": "816d12536a7a032adc3b68737f82cfbbf98b79c1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8e0c63329c8c4185296b8d357daa5c6bae43080f",
+                "reference": "8e0c63329c8c4185296b8d357daa5c6bae43080f",
                 "shasum": ""
             },
             "require": {
@@ -2971,7 +2966,7 @@
                 "ext-spl": "*",
                 "php": ">=5.3.3",
                 "phpspec/prophecy": "~1.3,>=1.3.1",
-                "phpunit/php-code-coverage": "~2.0,>=2.0.11",
+                "phpunit/php-code-coverage": "~2.1",
                 "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": "~1.0",
@@ -2993,7 +2988,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.6.x-dev"
+                    "dev-master": "4.7.x-dev"
                 }
             },
             "autoload": {
@@ -3019,7 +3014,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-05-29 06:00:03"
+            "time": "2015-06-06 08:36:08"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
