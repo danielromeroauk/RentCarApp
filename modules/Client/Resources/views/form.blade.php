@@ -1,0 +1,54 @@
+
+<div class="form-group">
+    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('client::ui.client.firstname_label') }}</label>
+    <div class="col-lg-10">
+        {!! Form::text('firstname', null, ['class' => 'form-control']) !!}
+    </div>
+</div>
+
+<div class="form-group">
+    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('client::ui.client.lastname_label') }}</label>
+    <div class="col-lg-10">
+        {!! Form::text('lastname', null, ['class' => 'form-control']) !!}
+    </div>
+</div>
+
+<div class="form-group">
+    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('client::ui.client.passport_label') }}</label>
+    <div class="col-lg-10">
+        {!! Form::text('passport', null, ['class' => 'form-control']) !!}
+    </div>
+</div>
+
+<div class="form-group">
+    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('client::ui.country.name') }}</label>
+    <div class="col-lg-10">
+
+        {!! Form::select('countries_id', $countries, null, ['class' => 'form-control']) !!}
+
+    </div>
+</div>
+
+<div class="form-group">
+    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('client::ui.client.quantity_car_label') }}</label>
+    <div class="col-lg-10">
+        {!! Form::text('quantity_car_used', null, ['class' => 'form-control']) !!}
+    </div>
+</div>
+
+<div class="form-group">
+    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('client::ui.client.rent_total_label') }}</label>
+    <div class="col-lg-10">
+        {!! Form::text('rent_total_amount', null, ['class' => 'form-control']) !!}
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+
+        {!! Form::submit($button, ['class' => 'btn btn-primary']) !!}
+
+    </div>
+</div>
+
+{!! Form::close() !!}

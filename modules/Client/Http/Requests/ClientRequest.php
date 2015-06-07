@@ -1,0 +1,34 @@
+<?php namespace Modules\Client\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class ClientRequest extends FormRequest {
+
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'firstname' => 'required|string|alpha',
+            'lastname' => 'required',
+            'passport' => 'required|size:5',
+            'countries_id' => 'required|numeric',
+            'quantity_car_used' => 'required|numeric',
+            'rent_total_amount' => 'required|numeric'
+        ];
+    }
+
+}
