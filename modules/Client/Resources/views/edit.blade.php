@@ -13,7 +13,7 @@
 
                         @include('errors.form_error')
 
-                        {!! Form::model($client, ['method' => 'PUT', 'class' => 'cmxform form-horizontal', 'id' => 'nameForm', 'route' => ['client.update', $client->id]]) !!}
+                        {!! Form::model($client, ['method' => 'PUT', 'class' => 'cmxform form-horizontal', 'id' => 'clientForm', 'route' => ['client.update', $client->id]]) !!}
 
                         @include('client::form', array('client' => $client) + compact('countries'), ['button' => trans('client::ui.client.button_update')])
 
@@ -26,6 +26,6 @@
 @stop
 
 @section('script')
-    <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('js/validation-init.js') }}"></script>
+    <script src="{{ asset('js/validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('js/validation/validation-init.js') }}"></script>
 @stop

@@ -2,7 +2,6 @@ var Script = function () {
 
     $().ready(function() {
 
-        // validate signup form on keyup and submit
         $("#nameForm").validate({
             rules: {
                 name: 'required'

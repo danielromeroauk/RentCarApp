@@ -26,6 +26,6 @@
 @stop
 
 @section('script')
-    <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('js/validation-init.js') }}"></script>
+    <script src="{{ asset('js/validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('js/validation/validation-init.js') }}"></script>
 @stop
