@@ -15,6 +15,7 @@ class CreateAgreementsTable extends Migration {
         Schema::create('agreements', function(Blueprint $table)
         {
             $table->increments('id');
+            $table->string('code');
             $table->integer('client_id');
             $table->integer('car_id');
             $table->integer('car_brand_id');

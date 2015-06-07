@@ -18,20 +18,22 @@ return [
     ],
 
     'agreement'                   =>  [
-        'name'              =>  'Coche',
-        'names'             =>  'Coches',
+        'name'              =>  'Contrato',
+        'names'             =>  'Contrato',
+        'code'              =>  'Código del Contrato',
         'sheet_label'       =>  'Número de Chapa',
-        'quantity_label'    =>  'Cantidad de Km',
-        'price_label'       =>  'Precio/hora (€)',
+        'registration_label'=>  'Fecha de Alquiler',
+        'delivery_label'    =>  'Fecha de Entrega',
+        'cash_label'        =>  'Precio en Efectivo (€)',
         'operation_label'   =>  'Operaciones',
-        'new_car'           =>  'Nuevo Coche',
-        'edit_car'          =>  'Editar Coche',
+        'new_car'           =>  'Nuevo Contrato',
+        'edit_car'          =>  'Editar Contrato',
         'button_update'     =>  'Actualizar',
         'button_delete'     =>  'Eliminar',
-        'button_add'        =>  'Agregar',
-        'message_delete'    =>  'El coche :brand ha sido eliminado satisfactoriamente',
-        'message_create'    =>  'El coche :brand ha sido creado satisfactoriamente',
-        'message_update'    =>  'El coche :brand ha sido actualizado satisfactoriamente'
+        'button_add'        =>  'Nuevo',
+        'message_delete'    =>  'El contrato del cliente :name ha sido eliminado satisfactoriamente',
+        'message_create'    =>  'El contrato del cliente :name ha sido creado satisfactoriamente',
+        'message_update'    =>  'El contrato del cliente :name ha sido actualizado satisfactoriamente'
     ],
 
 ];

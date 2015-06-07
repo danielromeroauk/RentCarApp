@@ -17,17 +17,17 @@ return [
         'message_update'    =>  'El país :name ha sido actualizado satisfactoriamente'
     ],
 
-    'client'                 =>  [
+    'client'                =>  [
         'name'              =>  'Cliente',
         'names'             =>  'Clientes',
-        'firstname_label'        =>  'Nombre',
-        'lastname_label'        =>  'Apellidos',
-        'passport_label'        =>  'Número Pasaporte',
-        'quantity_car_label'        =>  'Veces que usó el Coche',
-        'rent_total_label'        =>  'Precio Total (€)',
+        'firstname_label'   =>  'Nombre',
+        'lastname_label'    =>  'Apellidos',
+        'passport_label'    =>  'Número Pasaporte',
+        'quantity_car_label'=>  'Veces que usó el Coche',
+        'rent_total_label'  =>  'Precio Total (€)',
         'operation_label'   =>  'Operaciones',
-        'new_client'         =>  'Nuevo Cliente',
-        'edit_client'        =>  'Editar Cliente',
+        'new_client'        =>  'Nuevo Cliente',
+        'edit_client'       =>  'Editar Cliente',
         'button_update'     =>  'Actualizar',
         'button_delete'     =>  'Eliminar',
         'button_add'        =>  'Agregar',

@@ -7,6 +7,7 @@ class Agreement extends Model {
     protected $table = 'agreements';
 
     protected $fillable = [
+        'code',
         'client_id',
         'car_id',
         'car_brand_id',
@@ -32,11 +33,15 @@ class Agreement extends Model {
     }
 
     public function color() {
-        return $this->belongsTo('Modules\Car\Entities\Brand', 'car_color_id');
+        return $this->belongsTo('Modules\Car\Entities\Color', 'car_color_id');
     }
 
-    public function agreement_status() {
+    public function status() {
         return $this->belongsTo('Modules\Agreement\Entities\AgreementStatus', 'agreement_status_id');
+    }
+
+    public function client() {
+        return $this->belongsTo('Modules\Client\Entities\Client', 'client_id');
     }
 
 }
