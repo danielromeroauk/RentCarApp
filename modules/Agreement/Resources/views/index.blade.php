@@ -1,4 +1,4 @@
-@extends('agreement::layouts.master')
+@extends('agreement::status.master')
 
 @section('content')
 	

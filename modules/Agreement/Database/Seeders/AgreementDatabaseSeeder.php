@@ -1,7 +1,7 @@
 <?php namespace Modules\Agreement\Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
 
 class AgreementDatabaseSeeder extends Seeder {
 
@@ -12,9 +12,28 @@ class AgreementDatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		Model::unguard();
-		
-		// $this->call("OthersTableSeeder");
+		$this->agreementStatusSeeders();
 	}
+
+    private function agreementStatusSeeders() {
+
+        \DB::table('agreements_status')->insert(array(
+            'name' => 'Vigente',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
+
+        \DB::table('agreements_status')->insert(array(
+            'name' => 'Cumplido',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
+
+        \DB::table('agreements_status')->insert(array(
+            'name' => 'Incumplido',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
+    }
 
 }

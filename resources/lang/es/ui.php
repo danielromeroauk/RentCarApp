@@ -20,6 +20,7 @@ return [
         'conditions'    =>  'Estado',
         'clients'       =>  'Clientes',
         'countries'     =>  'Países',
-        'agreements'     =>  'Contratos'
+        'agreements'    =>  'Contratos',
+        'status'        =>  'Estados del Contrato'
     ]
 ];
