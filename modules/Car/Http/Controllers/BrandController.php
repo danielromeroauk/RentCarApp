@@ -9,7 +9,7 @@ class BrandController extends Controller {
 	
 	public function index()
 	{
-        $brands = Brand::all()->sort('asc');
+        $brands = Brand::all();
 
 		return view('car::brand.index', compact('brands'));
 	}

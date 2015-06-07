@@ -13,7 +13,7 @@
 
                         @include('errors.form_error')
 
-                        {!! Form::model($condition, ['method' => 'PUT', 'route' => ['car.condition.update', $condition->id], 'class' => 'form-horizontal']) !!}
+                        {!! Form::model($condition, ['method' => 'PUT', 'route' => ['car.condition.update', $condition->id], 'class' => 'cmxform form-horizontal', 'id' => 'nameForm']) !!}
 
                         @include('car::condition.form', ['button' => trans('car::ui.condition.button_update')])
 
@@ -23,4 +23,9 @@
             </div>
         </div>
     </section>
+@stop
+
+@section('script')
+    <script src="{{ asset('js/validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('js/validation/validation-init.js') }}"></script>
 @stop

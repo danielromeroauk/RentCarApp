@@ -37,5 +37,26 @@ var Script = function () {
                 rent_total_amount: "Este campo es requerido y solo debe contener números decimales"
             }
         });
+
+        $("#carForm").validate({
+            rules: {
+                sheet_number: {
+                    required: true
+                },
+                quantity_km: {
+                    required: true,
+                    digits: true
+                },
+                price_by_hour: {
+                    required: true,
+                    number: true
+                }
+            },
+            messages: {
+                sheet_number: "Este campo es requerido y su formato es: 4785DTD",
+                quantity_km: "Este campo es requerido y solo debe contener números",
+                price_by_hour: "Este campo es requerido y solo debe contener números decimales"
+            }
+        });
     });
 }();

@@ -13,7 +13,7 @@
 
                         @include('errors.form_error')
 
-                        {!! Form::open(array('route' => 'car.store', 'class' => 'form-horizontal')) !!}
+                        {!! Form::open(array('route' => 'car.store', 'class' => 'cmxform form-horizontal', 'id' => 'carForm')) !!}
 
                         @include('car::form', ['button' => trans('car::ui.car.button_add')])
 
@@ -23,4 +23,9 @@
             </div>
         </div>
     </section>
+@stop
+
+@section('script')
+    <script src="{{ asset('js/validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('js/validation/validation-init.js') }}"></script>
 @stop
