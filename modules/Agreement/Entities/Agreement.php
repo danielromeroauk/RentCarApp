@@ -23,7 +23,7 @@ class Agreement extends Model {
     public function car() {
         return $this->belongsTo('Modules\Car\Entities\Car', 'car_id');
     }
-    
+
     public function status() {
         return $this->belongsTo('Modules\Agreement\Entities\AgreementStatus', 'agreement_status_id');
     }

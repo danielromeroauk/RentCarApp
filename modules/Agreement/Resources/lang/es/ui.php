@@ -3,7 +3,7 @@
 return [
 
     'status'                 =>  [
-        'name'              =>  'Estado',
+        'name'              =>  'Estado del Contrato',
         'names'             =>  'Estados del Contrato',
         'name_label'        =>  'Nombre',
         'operation_label'   =>  'Operaciones',
@@ -24,10 +24,11 @@ return [
         'sheet_label'       =>  'Número de Chapa',
         'registration_label'=>  'Fecha de Alquiler',
         'delivery_label'    =>  'Fecha de Entrega',
+        'to_label'          =>  'A',
         'cash_label'        =>  'Precio en Efectivo (€)',
         'operation_label'   =>  'Operaciones',
-        'new_car'           =>  'Nuevo Contrato',
-        'edit_car'          =>  'Editar Contrato',
+        'new_agreement'     =>  'Nuevo Contrato',
+        'edit_agreement'    =>  'Editar Contrato',
         'button_update'     =>  'Actualizar',
         'button_delete'     =>  'Eliminar',
         'button_add'        =>  'Nuevo',

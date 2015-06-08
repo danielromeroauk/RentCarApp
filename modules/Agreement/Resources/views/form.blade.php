@@ -1,58 +1,43 @@
 
 <div class="form-group">
-    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('car::ui.brand.name') }}</label>
+    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('client::ui.client.name') }}</label>
     <div class="col-lg-10">
 
-        {!! Form::select('brand_id', $brands, null, ['class' => 'form-control']) !!}
+        {!! Form::select('client_id', $clients, null, ['class' => 'form-control']) !!}
 
     </div>
 </div>
 
 <div class="form-group">
-    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('car::ui.prototype.name') }}</label>
+    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('car::ui.car.name') }}</label>
     <div class="col-lg-10">
 
-        {!! Form::select('prototype_id', $prototypes, null, ['class' => 'form-control']) !!}
+        {!! Form::select('car_id', $cars, null, ['class' => 'form-control']) !!}
 
     </div>
 </div>
 
 <div class="form-group">
-    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('car::ui.color.name') }}</label>
-    <div class="col-lg-10">
+    <label class="control-label col-md-3">{{ trans('agreement::ui.agreement.registration_label') }}</label>
+    <div class="col-md-8 col-xs-11">
+        <div class="input-group input-large custom-date-range">
 
-        {!! Form::select('color_id', $colors, null, ['class' => 'form-control']) !!}
+            {!! Form::text('registration_date', null, ['class' => 'form-control form_datetime']) !!}
 
+            <span class="input-group-addon">{{ trans('agreement::ui.agreement.to_label') }}</span>
+
+            {!! Form::text('delivery_date', null, ['class' => 'form-control form_datetime']) !!}
+
+        </div>
     </div>
 </div>
 
 <div class="form-group">
-    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('car::ui.condition.name') }}</label>
+    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('agreement::ui.status.name') }}</label>
     <div class="col-lg-10">
 
-        {!! Form::select('condition_id', $conditions, null, ['class' => 'form-control']) !!}
+        {!! Form::select('agreement_status_id', $status, null, ['class' => 'form-control']) !!}
 
-    </div>
-</div>
-
-<div class="form-group">
-    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('car::ui.car.sheet_label') }}</label>
-    <div class="col-lg-10">
-        {!! Form::text('sheet_number', null, ['class' => 'form-control']) !!}
-    </div>
-</div>
-
-<div class="form-group">
-    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('car::ui.car.quantity_label') }}</label>
-    <div class="col-lg-10">
-        {!! Form::text('quantity_km', null, ['class' => 'form-control']) !!}
-    </div>
-</div>
-
-<div class="form-group">
-    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('car::ui.car.price_label') }}</label>
-    <div class="col-lg-10">
-        {!! Form::text('price_by_hour', null, ['class' => 'form-control']) !!}
     </div>
 </div>
 
