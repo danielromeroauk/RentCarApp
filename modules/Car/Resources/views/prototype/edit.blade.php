@@ -2,28 +2,26 @@
 
 @section('content')
     <section class="wrapper">
-        @include('partials.message')
-        <div class="row">
-            <div class="col-lg-6">
-                <section class="panel">
-                    <header class="panel-heading">
-                        {{ trans('car::ui.prototype.edit_prototype') }}
-                    </header>
-                    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">{{ trans('car::ui.prototype.edit_prototype') }}</div>
+                        <div class="panel-body">
+                            @include('errors.form_error')
 
-                        @include('errors.form_error')
+                            {!! Form::model($prototype, ['method' => 'PUT', 'route' => ['car.model.update', $prototype->id], 'class' => 'cmxform form-horizontal', 'id' => 'nameForm']) !!}
 
-                        {!! Form::model($prototype, ['method' => 'PUT', 'route' => ['car.model.update', $prototype->id], 'class' => 'cmxform form-horizontal', 'id' => 'nameForm']) !!}
+                            @include('car::prototype.form', ['button' => trans('car::ui.prototype.button_update')])
 
-                        @include('car::prototype.form', ['button' => trans('car::ui.prototype.button_update')])
-
-                        {!! Form::close() !!}
+                            {!! Form::close() !!}
+                        </div>
                     </div>
-                </section>
+                </div>
             </div>
         </div>
     </section>
-@stop
+@endsection
 
 @section('script')
     <script src="{{ asset('js/validation/jquery.validate.min.js') }}"></script>

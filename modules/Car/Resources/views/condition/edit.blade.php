@@ -2,28 +2,26 @@
 
 @section('content')
     <section class="wrapper">
-        @include('partials.message')
-        <div class="row">
-            <div class="col-lg-6">
-                <section class="panel">
-                    <header class="panel-heading">
-                        {{ trans('car::ui.condition.edit_cond') }}
-                    </header>
-                    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">{{ trans('car::ui.condition.edit_cond') }}</div>
+                        <div class="panel-body">
+                            @include('errors.form_error')
 
-                        @include('errors.form_error')
+                            {!! Form::model($condition, ['method' => 'PUT', 'route' => ['car.condition.update', $condition->id], 'class' => 'cmxform form-horizontal', 'id' => 'nameForm']) !!}
 
-                        {!! Form::model($condition, ['method' => 'PUT', 'route' => ['car.condition.update', $condition->id], 'class' => 'cmxform form-horizontal', 'id' => 'nameForm']) !!}
+                            @include('car::condition.form', ['button' => trans('car::ui.condition.button_update')])
 
-                        @include('car::condition.form', ['button' => trans('car::ui.condition.button_update')])
-
-                        {!! Form::close() !!}
+                            {!! Form::close() !!}
+                        </div>
                     </div>
-                </section>
+                </div>
             </div>
         </div>
     </section>
-@stop
+@endsection
 
 @section('script')
     <script src="{{ asset('js/validation/jquery.validate.min.js') }}"></script>
