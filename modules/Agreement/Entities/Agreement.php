@@ -21,21 +21,9 @@ class Agreement extends Model {
     ];
 
     public function car() {
-        return $this->belongsTo('Modules\Car\Entities\Brand', 'car_id');
+        return $this->belongsTo('Modules\Car\Entities\Car', 'car_id');
     }
-
-    public function brand() {
-        return $this->belongsTo('Modules\Car\Entities\Brand', 'car_brand_id');
-    }
-
-    public function prototype() {
-        return $this->belongsTo('Modules\Car\Entities\Brand', 'car_prototype_id');
-    }
-
-    public function color() {
-        return $this->belongsTo('Modules\Car\Entities\Color', 'car_color_id');
-    }
-
+    
     public function status() {
         return $this->belongsTo('Modules\Agreement\Entities\AgreementStatus', 'agreement_status_id');
     }

@@ -46,9 +46,9 @@
                                         <td>{{ $agreement->code }}</td>
                                         <td>{{ $agreement->client->lastname }}</td>
                                         <td>{{ $agreement->client->firstname }}</td>
-                                        <td>{{ $agreement->brand->name }}</td>
-                                        <td>{{ $agreement->prototype->name }}</td>
-                                        <td>{{ $agreement->color->name }}</td>
+                                        <td>{{ $agreement->car->brand->name }}</td>
+                                        <td>{{ $agreement->car->prototype->name }}</td>
+                                        <td>{{ $agreement->car->color->name }}</td>
                                         <td>{{ $agreement->status->name }}</td>
                                         <td>{{ $agreement->registration_date }}</td>
                                         <td>{{ $agreement->delivery_date }}</td>
