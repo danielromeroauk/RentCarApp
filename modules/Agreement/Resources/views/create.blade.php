@@ -6,6 +6,7 @@
 
 @section('content')
     <section class="wrapper">
+        @include('partials.message')
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -30,6 +31,6 @@
 @section('script')
     <script src="{{ asset('js/validation/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('js/validation/validation-init.js') }}"></script>
-    <script src="{{ asset('js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
     <script src="{{ asset('js/pickers-init.js') }}"></script>
 @stop

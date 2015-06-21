@@ -1,10 +1,16 @@
 @extends('auth::layouts.master')
 
+@section('style')
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/style-responsive.css') }}" rel="stylesheet" />
+@stop
+
 @section('content')
 
     <div class="container">
 
-        <form class="form-signin" action="{{ url('/dashboard') }}">
+        {!! Form::open(array('route' => 'auth.test', 'class' => 'cmxform form-signin', 'id' => 'loginForm')) !!}
+
             <div class="form-signin-heading text-center">
                 <h1 class="sign-title">Sign In</h1>
                 <img src="{{ asset('images/login-logo.png') }}" alt=""/>
@@ -55,7 +61,7 @@
             </div>
             <!-- modal -->
 
-        </form>
+            {!! Form::close() !!}
 
     </div>
 

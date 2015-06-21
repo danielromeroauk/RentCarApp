@@ -3,6 +3,8 @@
 
     @include('partials.header')
 
+    @include('partials.style')
+
     <body class="login-body">
 
 		@yield('content')

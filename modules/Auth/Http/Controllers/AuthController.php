@@ -4,10 +4,14 @@ use Pingpong\Modules\Routing\Controller;
 
 class AuthController extends Controller {
 	
-	public function index()
-	{
-		//return view('auth::login');
-		return view('errors.test');
+	public function index() {
+
+		return view('auth::login');
 	}
+
+    public function login() {
+
+        return redirect('client');
+    }
 	
 }

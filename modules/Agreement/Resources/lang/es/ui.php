@@ -31,7 +31,7 @@ return [
         'edit_agreement'    =>  'Editar Contrato',
         'button_update'     =>  'Actualizar',
         'button_delete'     =>  'Eliminar',
-        'button_add'        =>  'Nuevo',
+        'button_add'        =>  'Agregar',
         'message_delete'    =>  'El contrato del cliente :name ha sido eliminado satisfactoriamente',
         'message_create'    =>  'El contrato del cliente :name ha sido creado satisfactoriamente',
         'message_update'    =>  'El contrato del cliente :name ha sido actualizado satisfactoriamente'
