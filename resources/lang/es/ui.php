@@ -21,6 +21,10 @@ return [
         'clients'       =>  'Clientes',
         'countries'     =>  'Países',
         'agreements'    =>  'Contratos',
-        'status'        =>  'Estados del Contrato'
+        'status'        =>  'Estados del Contrato',
+        'admin_users'   =>  'Administrar Usuarios',
+        'permissions'   =>  'Permisos',
+        'roles'         =>  'Roles',
+        'users'         =>  'Usuarios'
     ]
 ];

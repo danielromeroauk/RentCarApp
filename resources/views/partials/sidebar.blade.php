@@ -33,14 +33,14 @@
 
         <!--sidebar nav start-->
         <ul class="nav nav-pills nav-stacked custom-nav">
-            <li class="active"><a href="{{ url('/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('ui.sidebar.dashboard') }}</span></a></li>
+            <li class="active"><a href="{{ url('/dashboard') }}"><i class="fa fa-home"></i> <span>{{ trans('ui.sidebar.dashboard') }}</span></a></li>
             <li class="menu-list"><a href=""><i class="fa fa-truck"></i> <span>{{ trans('ui.sidebar.label_car') }}</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="{{ url('car') }}"> {{ trans('ui.sidebar.cars') }}</a></li>
-                    <li><a href="{{ url('car/color') }}"> {{ trans('ui.sidebar.colors') }}</a></li>
-                    <li><a href="{{ url('car/brand') }}"> {{ trans('ui.sidebar.brands') }}</a></li>
-                    <li><a href="{{ url('car/model') }}"> {{ trans('ui.sidebar.prototypes') }}</a></li>
-                    <li><a href="{{ url('car/condition') }}"> {{ trans('ui.sidebar.conditions') }}</a></li>
+                    <li><a href="{{ url('car') }}"> <i class="fa fa-road"></i><span>{{ trans('ui.sidebar.cars') }}</span></a></li>
+                    <li><a href="{{ url('car/color') }}"> <i class="fa fa-dashboard"></i><span>{{ trans('ui.sidebar.colors') }}</span></a></li>
+                    <li><a href="{{ url('car/brand') }}"> <i class="fa fa-bookmark"></i><span>{{ trans('ui.sidebar.brands') }}</span></a></li>
+                    <li><a href="{{ url('car/model') }}"> <i class="fa fa-ticket"></i><span>{{ trans('ui.sidebar.prototypes') }}</span></a></li>
+                    <li><a href="{{ url('car/condition') }}"> <i class="fa fa-flag"></i><span>{{ trans('ui.sidebar.conditions') }}</span></a></li>
 
                 </ul>
             </li>
@@ -49,6 +49,14 @@
             <li><a href="{{ url('client/country') }}"><i class="fa fa-globe"></i> <span>{{ trans('ui.sidebar.countries') }}</span></a></li>
             <li><a href="{{ url('agreement') }}"><i class="fa fa-pencil-square-o"></i> <span>{{ trans('ui.sidebar.agreements') }}</span></a></li>
             <li><a href="{{ url('agreement/status') }}"><i class="fa fa-file-text-o"></i> <span>{{ trans('ui.sidebar.status') }}</span></a></li>
+
+            <li class="menu-list"><a href=""><i class="fa fa-user"></i> <span>{{ trans('ui.sidebar.admin_users') }}</span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="{{ url('auth/user') }}"> <i class="fa fa-male"></i><span>{{ trans('ui.sidebar.users') }}</span></a></li>
+                    <li><a href="{{ url('auth/role') }}"> <i class="fa fa-legal"></i><span>{{ trans('ui.sidebar.roles') }}</span></a></li>
+                    <li><a href="{{ url('auth/permission') }}"><i class="fa fa-key"></i> <span>{{ trans('ui.sidebar.permissions') }}</span></a></li>
+                </ul>
+            </li>
 
         </ul>
         <!--sidebar nav end-->

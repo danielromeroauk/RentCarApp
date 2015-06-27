@@ -188,55 +188,6 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "nesbot/carbon",
-        "version": "1.19.0",
-        "version_normalized": "1.19.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/briannesbitt/Carbon.git",
-            "reference": "68868e0b02d2d803d0052a59d4e5003cccf87320"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/68868e0b02d2d803d0052a59d4e5003cccf87320",
-            "reference": "68868e0b02d2d803d0052a59d4e5003cccf87320",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0",
-            "symfony/translation": "~2.6"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.0"
-        },
-        "time": "2015-05-09 03:23:44",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Carbon": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Brian Nesbitt",
-                "email": "brian@nesbot.com",
-                "homepage": "http://nesbot.com"
-            }
-        ],
-        "description": "A simple API extension for DateTime.",
-        "homepage": "http://carbon.nesbot.com",
-        "keywords": [
-            "date",
-            "datetime",
-            "time"
-        ]
-    },
-    {
         "name": "psr/log",
         "version": "1.0.0",
         "version_normalized": "1.0.0.0",
@@ -2400,57 +2351,6 @@
         ]
     },
     {
-        "name": "pingpong/generators",
-        "version": "2.0.17",
-        "version_normalized": "2.0.17.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/pingpong-labs/generators.git",
-            "reference": "4e56dc86c1d094420abf23d27f064e166f8005be"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/pingpong-labs/generators/zipball/4e56dc86c1d094420abf23d27f064e166f8005be",
-            "reference": "4e56dc86c1d094420abf23d27f064e166f8005be",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/dbal": "~2.5",
-            "illuminate/filesystem": "5.0.*",
-            "illuminate/support": "5.0.*",
-            "php": ">=5.4.0",
-            "pingpong/support": "~2.0"
-        },
-        "require-dev": {
-            "mockery/mockery": "~0.9",
-            "phpunit/phpunit": "~4"
-        },
-        "time": "2015-06-09 08:48:16",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Pingpong\\Generators\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Pingpong Labs",
-                "email": "pingpong.labs@gmail.com"
-            }
-        ],
-        "description": "Laravel Generators",
-        "keywords": [
-            "generators",
-            "laravel",
-            "pingpong"
-        ]
-    },
-    {
         "name": "sebastian/version",
         "version": "1.0.6",
         "version_normalized": "1.0.6.0",
@@ -3553,18 +3453,118 @@
         ]
     },
     {
-        "name": "pingpong/modules",
-        "version": "2.0.18",
-        "version_normalized": "2.0.18.0",
+        "name": "nesbot/carbon",
+        "version": "1.20.0",
+        "version_normalized": "1.20.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/pingpong-labs/modules.git",
-            "reference": "3bda8727ed7cc744cbcc071f5d48f2dbf134892c"
+            "url": "https://github.com/briannesbitt/Carbon.git",
+            "reference": "bfd3eaba109c9a2405c92174c8e17f20c2b9caf3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/3bda8727ed7cc744cbcc071f5d48f2dbf134892c",
-            "reference": "3bda8727ed7cc744cbcc071f5d48f2dbf134892c",
+            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bfd3eaba109c9a2405c92174c8e17f20c2b9caf3",
+            "reference": "bfd3eaba109c9a2405c92174c8e17f20c2b9caf3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "symfony/translation": "~2.6|~3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2015-06-25 04:19:39",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Carbon": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Brian Nesbitt",
+                "email": "brian@nesbot.com",
+                "homepage": "http://nesbot.com"
+            }
+        ],
+        "description": "A simple API extension for DateTime.",
+        "homepage": "http://carbon.nesbot.com",
+        "keywords": [
+            "date",
+            "datetime",
+            "time"
+        ]
+    },
+    {
+        "name": "pingpong/generators",
+        "version": "2.0.21",
+        "version_normalized": "2.0.21.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pingpong-labs/generators.git",
+            "reference": "0bf9bc1f151436438b463ad94f7574d666a66057"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/pingpong-labs/generators/zipball/0bf9bc1f151436438b463ad94f7574d666a66057",
+            "reference": "0bf9bc1f151436438b463ad94f7574d666a66057",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/dbal": "~2.5",
+            "illuminate/filesystem": "5.0.*",
+            "illuminate/support": "5.0.*",
+            "php": ">=5.4.0",
+            "pingpong/support": "~2.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~4"
+        },
+        "time": "2015-06-24 05:53:24",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Pingpong\\Generators\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Pingpong Labs",
+                "email": "pingpong.labs@gmail.com"
+            }
+        ],
+        "description": "Laravel Generators",
+        "keywords": [
+            "generators",
+            "laravel",
+            "pingpong"
+        ]
+    },
+    {
+        "name": "pingpong/modules",
+        "version": "2.0.21",
+        "version_normalized": "2.0.21.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pingpong-labs/modules.git",
+            "reference": "2d03f066571f12e996bae139eefc6ba57567e830"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/2d03f066571f12e996bae139eefc6ba57567e830",
+            "reference": "2d03f066571f12e996bae139eefc6ba57567e830",
             "shasum": ""
         },
         "require": {
@@ -3578,7 +3578,7 @@
             "mockery/mockery": "~0.9",
             "phpunit/phpunit": "~4"
         },
-        "time": "2015-06-11 03:37:32",
+        "time": "2015-06-22 17:55:34",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3603,6 +3603,75 @@
             "module",
             "modules",
             "pingpong"
+        ]
+    },
+    {
+        "name": "zizaco/entrust",
+        "version": "dev-laravel-5",
+        "version_normalized": "dev-laravel-5",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Zizaco/entrust.git",
+            "reference": "804000c1c535221792b4e173ecdcc02b5681f5ec"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Zizaco/entrust/zipball/804000c1c535221792b4e173ecdcc02b5681f5ec",
+            "reference": "804000c1c535221792b4e173ecdcc02b5681f5ec",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/console": "~5.0",
+            "illuminate/support": "~5.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "illuminate/database": "~5.0",
+            "mockery/mockery": "dev-master",
+            "phpunit/phpunit": "~4.1",
+            "sami/sami": "dev-master"
+        },
+        "time": "2015-05-25 00:17:51",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/commands"
+            ],
+            "psr-4": {
+                "Zizaco\\Entrust\\": "src/Entrust/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andrew Elkins",
+                "homepage": "http://andrewelkins.com"
+            },
+            {
+                "name": "Zizaco Zizuini",
+                "email": "zizaco@gmail.com"
+            },
+            {
+                "name": "Ben Batschelet",
+                "homepage": "http://github.com/bbatsche"
+            },
+            {
+                "name": "Michele Angioni",
+                "email": "michele.angioni@gmail.com"
+            }
+        ],
+        "description": "This package provides a flexible way to add Role-based Permissions to Laravel",
+        "keywords": [
+            "acl",
+            "auth",
+            "illuminate",
+            "laravel",
+            "permission",
+            "roles"
         ]
     }
 ]

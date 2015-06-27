@@ -20,6 +20,16 @@ class AuthSetupTables extends Migration
             $table->timestamps();
         });
 
+        // Create table for storing users
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('email')->nullable();
+            $table->string('password')->nullable();
+            $table->timestamps();
+        });
+
         // Create table for associating roles to users (Many-to-Many)
         Schema::create('role_user', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();

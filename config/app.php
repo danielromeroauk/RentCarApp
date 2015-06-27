@@ -142,6 +142,7 @@ return [
         'Collective\Html\HtmlServiceProvider',
         'Pingpong\Modules\ModulesServiceProvider',
         'Pingpong\Modules\Providers\BootstrapServiceProvider',
+        'Zizaco\Entrust\EntrustServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -202,6 +203,7 @@ return [
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
         'Module' => 'Pingpong\Modules\Facades\Module',
+        'Entrust' => 'Zizaco\Entrust\EntrustFacade',
 
 	],
 
