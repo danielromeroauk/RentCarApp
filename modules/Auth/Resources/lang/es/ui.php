@@ -36,4 +36,24 @@ return [
         'message_update'        =>  'El rol :name ha sido actualizado satisfactoriamente'
     ],
 
+    'user'                      =>  [
+        'name'                  =>  'Nombre',
+        'names'                 =>  'Usuarios',
+        'firstname'             =>  'Nombre',
+        'lastname'              =>  'Apellidos',
+        'email'                 =>  'Correo',
+        'password'              =>  'Contraseña',
+        'password_confirmation' =>  'Confirmar Contraseña',
+        'name_label'            =>  'Usuario',
+        'operation_label'       =>  'Operaciones',
+        'new_user'           =>  'Nuevo Usuario',
+        'edit_user'          =>  'Editar Usuario',
+        'button_update'         =>  'Actualizar',
+        'button_delete'         =>  'Eliminar',
+        'button_add'            =>  'Agregar',
+        'message_delete'        =>  'El usuario :name ha sido eliminado satisfactoriamente',
+        'message_create'        =>  'El usuario :name ha sido creado satisfactoriamente',
+        'message_update'        =>  'El usuario :name ha sido actualizado satisfactoriamente'
+    ],
+
 ];

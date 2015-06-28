@@ -15,7 +15,7 @@
             <div class="col-sm-12">
                 <section class="panel">
                     <header class="panel-heading">
-                        {{ trans('auth::ui.role.names') }}
+                        {{ trans('auth::ui.user.names') }}
             <span class="tools pull-right">
                 <a href="javascript:;" class="fa fa-chevron-down"></a>
                 <a href="javascript:;" class="fa fa-times"></a>
@@ -23,38 +23,38 @@
                     </header>
                     <div class="panel-body">
                         <div class="adv-table">
-                            <a href="{{ url('auth/role/create') }}"><button class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i> {{ trans("auth::ui.role.button_add") }}</button></a>
+                            <a href="{{ url('auth/user/create') }}"><button class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i> {{ trans("auth::ui.user.button_add") }}</button></a>
                             <table  class="display table table-bordered table-striped" id="dynamic-table">
                                 <thead>
                                 <tr>
-                                    <th>{{ trans('auth::ui.role.name_label') }}</th>
-                                    <th>{{ trans('auth::ui.role.display') }}</th>
-                                    <th>{{ trans('auth::ui.role.description') }}</th>
-                                    <th>{{ trans('auth::ui.permission.names') }}</th>
-                                    <th>{{ trans('auth::ui.role.operation_label') }}</th>
+                                    <th>{{ trans('auth::ui.user.firstname') }}</th>
+                                    <th>{{ trans('auth::ui.user.lastname') }}</th>
+                                    <th>{{ trans('auth::ui.user.email') }}</th>
+                                    <th>{{ trans('auth::ui.role.names') }}</th>
+                                    <th>{{ trans('auth::ui.user.operation_label') }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($roles as $role)
+                                @foreach($users as $user)
 
                                     <tr class="gradeX">
-                                        <td>{{ $role->name }}</td>
-                                        <td>{{ $role->display_name }}</td>
-                                        <td>{{ $role->description }}</td>
+                                        <td>{{ $user->firstname }}</td>
+                                        <td>{{ $user->lastname }}</td>
+                                        <td>{{ $user->email }}</td>
                                         <td><ul>
-                                                @foreach($role->permissions as $permission)
+                                                @foreach($user->roles as $role)
                                                 <li>
-                                                    {{ $permission->display_name }}
+                                                    {{ $role->display_name }}
                                                 </li>
                                                 @endforeach
                                             </ul></td>
                                         <td>
                                             <p>
-                                            <a href="{{ url('auth/role/' . $role->id . '/edit') }}">
-                                                <button class="btn btn-info " type="button"><i class="fa fa-refresh"></i> {{ trans('auth::ui.role.button_update') }}</button>
+                                            <a href="{{ url('auth/user/' . $user->id . '/edit') }}">
+                                                <button class="btn btn-info " type="button"><i class="fa fa-refresh"></i> {{ trans('auth::ui.user.button_update') }}</button>
                                             </a>
-                                            {!! Form::open(['url' => 'auth/role/'. $role->id, 'method' => 'delete']) !!}
-                                            <button class="btn btn-danger " type="submit"><i class="fa fa-wrench"></i> {{ trans('auth::ui.role.button_delete') }}</button>
+                                            {!! Form::open(['url' => 'auth/user/'. $user->id, 'method' => 'delete']) !!}
+                                            <button class="btn btn-danger " type="submit"><i class="fa fa-wrench"></i> {{ trans('auth::ui.user.button_delete') }}</button>
                                             {!! Form::close() !!}
                                             </p>
                                         </td>
@@ -63,11 +63,11 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th>{{ trans('auth::ui.role.name_label') }}</th>
-                                    <th>{{ trans('auth::ui.role.display') }}</th>
-                                    <th>{{ trans('auth::ui.role.description') }}</th>
-                                    <th>{{ trans('auth::ui.permission.names') }}</th>
-                                    <th>{{ trans('auth::ui.role.operation_label') }}</th>
+                                    <th>{{ trans('auth::ui.user.firstname') }}</th>
+                                    <th>{{ trans('auth::ui.user.lastname') }}</th>
+                                    <th>{{ trans('auth::ui.user.email') }}</th>
+                                    <th>{{ trans('auth::ui.role.names') }}</th>
+                                    <th>{{ trans('auth::ui.user.operation_label') }}</th>
                                 </tr>
                                 </tfoot>
                             </table>

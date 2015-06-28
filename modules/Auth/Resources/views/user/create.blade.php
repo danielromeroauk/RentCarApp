@@ -11,13 +11,13 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
-                        <div class="panel-heading">{{ trans('auth::ui.role.edit_role') }}</div>
+                        <div class="panel-heading">{{ trans('auth::ui.user.new_user') }}</div>
                         <div class="panel-body">
                             @include('errors.form_error')
 
-                            {!! Form::model($role, ['method' => 'PUT', 'route' => ['auth.role.update', $role->id], 'class' => 'cmxform form-horizontal', 'id' => 'nameForm']) !!}
+                            {!! Form::open(array('url' => 'auth/user', 'class' => 'cmxform form-horizontal', 'id' => 'nameForm')) !!}
 
-                            @include('auth::role.form', array('role' => $role) + compact('permissions'), ['button' => trans('auth::ui.role.button_update')])
+                            @include('auth::user.form', ['button' => trans('auth::ui.user.button_add')])
 
                             {!! Form::close() !!}
                         </div>

@@ -10,7 +10,7 @@ class RoleController extends Controller {
 	
 	public function index() {
 
-        $roles = Role::with('permission')->get();
+        $roles = Role::with('permissions')->get();
 
 		return view('auth::role.index', compact('roles'));
 	}
@@ -37,11 +37,26 @@ class RoleController extends Controller {
 
     public function edit($id) {
 
-        $role = Role::findOrFail($id);
+        $role = Role::with('permissions')->findOrFail($id);
 
         $permissions = Permission::orderBy('display_name', 'asc')->lists('display_name', 'id');
 
         return view('auth::role.edit', compact('role', 'permissions'));
+    }
+
+    public function update($id){
+
+    }
+
+    public function destroy($id) {
+
+        $role = Role::findOrFail($id);
+
+        Role::destroy($id);
+
+        Session::flash('message', trans('auth::ui.role.message_delete', array('name' => $role->display_name)));
+
+        return redirect('auth/role');
     }
 	
 }
