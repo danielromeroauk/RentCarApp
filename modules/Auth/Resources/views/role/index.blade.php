@@ -36,11 +36,18 @@
                                 </thead>
                                 <tbody>
                                 @foreach($roles as $role)
+
                                     <tr class="gradeX">
                                         <td>{{ $role->name }}</td>
                                         <td>{{ $role->display_name }}</td>
                                         <td>{{ $role->description }}</td>
-                                        <td><ul><li>{{ $role->permission }}</li></ul></td>
+                                        <td><ul>
+                                                @foreach($role->permission as $permissions)
+                                                <li>
+                                                    {{ $permissions->display_name }}
+                                                </li>
+                                                @endforeach
+                                            </ul></td>
                                         <td>
                                             <p>
                                             <a href="{{ url('auth/role/' . $role->id . '/edit') }}">
