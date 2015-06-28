@@ -1,4 +1,5 @@
-<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ asset('css/style.css') }}" rel="stylesheet">
-<link href="{{ asset('css/style-responsive.css') }}" rel="stylesheet">
+{!! Html::style('css/bootstrap.min.css') !!}
+{!! Html::style('css/style.css') !!}
+{!! Html::style('css/style-responsive.css') !!}
+
 @yield('style')
