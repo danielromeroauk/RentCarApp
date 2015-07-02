@@ -23,10 +23,11 @@ class AuthSetupTables extends Migration
         // Create table for storing users
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('firstname');
-            $table->string('lastname');
+            $table->string('firstname')->nullable();
+            $table->string('lastname')->nullable();
             $table->string('email')->nullable();
             $table->string('password')->nullable();
+            $table->string('remember_token');
             $table->timestamps();
         });
 

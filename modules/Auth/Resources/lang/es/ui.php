@@ -56,4 +56,12 @@ return [
         'message_update'        =>  'El usuario :name ha sido actualizado satisfactoriamente'
     ],
 
+    'login'                     =>  [
+        'signin'                =>  'Iniciar Sesión',
+        'rememberme'            =>  'Recuérdame',
+        'email'                 =>  'Correo',
+        'password'              =>  'Contraseña',
+        'credentials_error'     =>  'El correo o la contraseña no son correctos'
+    ],
+
 ];
