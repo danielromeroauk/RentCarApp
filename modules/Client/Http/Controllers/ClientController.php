@@ -1,5 +1,6 @@
 <?php namespace Modules\Client\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Modules\Client\Entities\Client;
 use Modules\Client\Entities\Country;
@@ -7,68 +8,103 @@ use Modules\Client\Http\Requests\ClientRequest;
 use Pingpong\Modules\Routing\Controller;
 
 class ClientController extends Controller {
-	
-	public function index()
-	{
-        $clients = Client::with('country')->get();
 
-		return view('client::index', compact('clients'));
+    public function __construct() {
+
+        $this->middleware('auth');
+    }
+	
+	public function index(){
+
+        if(Auth::user()->can('read-clients')) {
+
+            $clients = Client::with('country')->get();
+
+            return view('client::index', compact('clients'));
+
+        }
+
+        return redirect('auth/logout');
 	}
 
     public function create() {
 
-        $countries = Country::orderBy('name', 'asc')->lists('name', 'id');
+        if(Auth::user()->can('create-clients')) {
 
-        return view('client::create', compact('countries'));
+            $countries = Country::orderBy('name', 'asc')->lists('name', 'id');
+
+            return view('client::create', compact('countries'));
+        }
+
+        return redirect('auth/logout');
     }
 
     public function store(ClientRequest $request) {
 
-        $data = Client::create($request->all());
+        if(Auth::user()->can('create-clients')) {
 
-        $client = Client::findOrFail($data->id);
+            $data = Client::create($request->all());
 
-        Session::flash('message', trans(
-            'client::ui.client.message_create', array('name' => $client->firstname.' '.$client->lastname))
-        );
+            $client = Client::findOrFail($data->id);
 
-        return redirect('client/create');
+            Session::flash('message', trans(
+                    'client::ui.client.message_create', array('name' => $client->firstname.' '.$client->lastname))
+            );
+
+            return redirect('client/create');
+        }
+
+        return redirect('auth/logout');
     }
 
     public function edit($id) {
 
-        $client = Client::findOrFail($id);
+        if(Auth::user()->can('edit-clients')) {
 
-        $countries = Country::orderBy('name', 'asc')->lists('name', 'id');
+            $client = Client::findOrFail($id);
 
-        return view('client::edit', compact('client', 'countries'));
+            $countries = Country::orderBy('name', 'asc')->lists('name', 'id');
 
+            return view('client::edit', compact('client', 'countries'));
+        }
+
+        return redirect('auth/logout');
     }
 
     public function update($id, ClientRequest $request) {
 
-        $client = Client::findOrFail($id);
+        if(Auth::user()->can('edit-clients')) {
 
-        $client->update($request->all());
+            $client = Client::findOrFail($id);
 
-        Session::flash('message', trans(
-                'client::ui.client.message_update', array('name' => $client->firstname.' '.$client->lastname))
-        );
+            $client->update($request->all());
 
-        return redirect('client');
+            Session::flash('message', trans(
+                    'client::ui.client.message_update', array('name' => $client->firstname.' '.$client->lastname))
+            );
+
+            return redirect('client');
+        }
+
+        return redirect('auth/logout');
     }
 
     public function destroy($id) {
 
-        $client = Client::findOrFail($id);
+        if(Auth::user()->can('delete-clients')) {
 
-        Client::destroy($id);
+            $client = Client::findOrFail($id);
 
-        Session::flash('message', trans(
-                'client::ui.client.message_delete', array('name' => $client->firstname.' '.$client->lastname))
-        );
+            Client::destroy($id);
 
-        return redirect('client');
+            Session::flash('message', trans(
+                    'client::ui.client.message_delete', array('name' => $client->firstname.' '.$client->lastname))
+            );
+
+            return redirect('client');
+        }
+
+        return redirect('auth/logout');
     }
 	
 }

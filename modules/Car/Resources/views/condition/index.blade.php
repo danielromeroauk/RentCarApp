@@ -41,7 +41,7 @@
                                                 <button class="btn btn-info " type="button"><i class="fa fa-refresh"></i> {{ trans('car::ui.condition.button_update') }}</button>
                                             </a>
                                             {!! Form::open(['url' => 'car/condition/'. $condition->id, 'method' => 'delete']) !!}
-                                            <button class="btn btn-danger " type="submit"><i class="fa fa-wrench"></i> {{ trans('car::ui.condition.button_delete') }}</button>
+                                            <button class="btn btn-danger " type="submit"><i class="fa fa-times-circle"></i> {{ trans('car::ui.condition.button_delete') }}</button>
                                             {!! Form::close() !!}
                                             </p>
                                         </td>

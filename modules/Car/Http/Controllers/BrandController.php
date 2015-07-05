@@ -6,6 +6,11 @@ use Modules\Car\Http\Requests\BrandRequest;
 use Pingpong\Modules\Routing\Controller;
 
 class BrandController extends Controller {
+
+    public function __construct() {
+
+        $this->middleware('auth');
+    }
 	
 	public function index()
 	{

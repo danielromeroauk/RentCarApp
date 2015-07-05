@@ -8,6 +8,11 @@ use Pingpong\Modules\Routing\Controller;
 
 class AgreementController extends Controller {
 
+    public function __construct() {
+
+        $this->middleware('auth');
+    }
+
     public function index() {
 
         $agreements = Agreement::all();

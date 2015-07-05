@@ -45,7 +45,7 @@
                                                 <button class="btn btn-info " type="button"><i class="fa fa-refresh"></i> {{ trans('auth::ui.permission.button_update') }}</button>
                                             </a>
                                             {!! Form::open(['url' => 'auth/permission/'. $permission->id, 'method' => 'delete']) !!}
-                                            <button class="btn btn-danger " type="submit"><i class="fa fa-wrench"></i> {{ trans('auth::ui.permission.button_delete') }}</button>
+                                            <button class="btn btn-danger " type="submit"><i class="fa fa-times-circle"></i> {{ trans('auth::ui.permission.button_delete') }}</button>
                                             {!! Form::close() !!}
                                             </p>
                                         </td>

@@ -7,6 +7,11 @@ use Modules\Auth\Entities\Role;
 use Modules\Auth\Http\Requests\RoleRequest;
 
 class RoleController extends Controller {
+
+    public function __construct() {
+
+        $this->middleware('auth');
+    }
 	
 	public function index() {
 

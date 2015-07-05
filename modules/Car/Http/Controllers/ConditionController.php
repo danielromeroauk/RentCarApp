@@ -6,6 +6,11 @@ use Modules\Car\Http\Requests\ConditionRequest;
 use Pingpong\Modules\Routing\Controller;
 
 class ConditionController extends Controller {
+
+    public function __construct() {
+
+        $this->middleware('auth');
+    }
 	
 	public function index()
 	{

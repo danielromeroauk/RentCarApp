@@ -12,7 +12,7 @@ class CreateAgreementsStatusTable extends Migration {
      */
     public function up()
     {
-        Schema::create('agreements_status', function(Blueprint $table)
+        Schema::create('status', function(Blueprint $table)
         {
             $table->increments('id');
             $table->string('name');
@@ -27,7 +27,7 @@ class CreateAgreementsStatusTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('agreements_status');
+        Schema::drop('status');
     }
 
 }

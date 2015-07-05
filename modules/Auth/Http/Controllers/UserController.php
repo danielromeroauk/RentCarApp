@@ -1,5 +1,6 @@
 <?php namespace Modules\Auth\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Modules\Auth\Entities\User;
 use Modules\Auth\Http\Requests\UserRequest;
@@ -8,60 +9,91 @@ use Modules\Auth\Entities\Role;
 
 class UserController extends Controller {
 
+    public function __construct() {
+
+        $this->middleware('auth');
+    }
+
 	public function index() {
 
-        $users = User::with('roles')->get();
+        if(Auth::user()->can('read-users')) {
 
-		return view('auth::user.index', compact('users'));
+            $users = User::with('roles')->get();
+
+            return view('auth::user.index', compact('users'));
+        }
+        return redirect('auth/logout');
 	}
 
     public function create() {
 
-        $roles = Role::orderBy('display_name', 'asc')->lists('display_name', 'id');
+        if(Auth::user()->can('create-users')) {
 
-        return view('auth::user.create', compact('roles'));
+            $roles = Role::orderBy('display_name', 'asc')->lists('display_name', 'id');
+
+            return view('auth::user.create', compact('roles'));
+        }
+        return redirect('auth/logout');
     }
 
     public function store(UserRequest $request) {
 
-        $data = User::create([
-            'firstname' =>  $request->input('firstname'),
-            'lastname'  =>  $request->input('lastname'),
-            'email'     =>  $request->input('email'),
-            'password'  =>  \Hash::make($request->input('password')),
-        ]);
+        if(Auth::user()->can('create-users')) {
 
-        $user = User::findOrFail($data->id);
+            $data = User::create([
+                'firstname' =>  $request->input('firstname'),
+                'lastname'  =>  $request->input('lastname'),
+                'email'     =>  $request->input('email'),
+                'password'  =>  \Hash::make($request->input('password')),
+            ]);
 
-        $data->attachRoles($request->input('role_id'));
+            $user = User::findOrFail($data->id);
 
-        Session::flash('message', trans('auth::ui.user.message_create', array('name' => $user->firstname)));
+            $data->attachRoles($request->input('role_id'));
 
-        return redirect('auth/user/create');
+            Session::flash('message', trans('auth::ui.user.message_create', array('name' => $user->firstname)));
+
+            return redirect('auth/user/create');
+        }
+        return redirect('auth/logout');
     }
 
     public function edit($id) {
 
-        $user = User::with('roles')->findOrFail($id);
+        if(Auth::user()->can('update-users')) {
 
-        $roles = Role::orderBy('display_name', 'asc')->lists('display_name', 'id');
+            $user = User::with('roles')->findOrFail($id);
 
-        return view('auth::user.edit', compact('user', 'roles'));
+            $roles = Role::orderBy('display_name', 'asc')->lists('display_name', 'id');
+
+            return view('auth::user.edit', compact('user', 'roles'));
+        }
+
+        return redirect('auth/logout');
     }
 
     public function update($id){
 
+        if($this->user->can('update-users')) {
+
+        }
+
+        return redirect('auth/logout');
     }
 
     public function destroy($id) {
 
-        $user = User::findOrFail($id);
+        if($this->user->can('delete-users')) {
 
-        User::destroy($id);
+            $user = User::findOrFail($id);
 
-        Session::flash('message', trans('auth::ui.user.message_delete', array('name' => $user->firstname)));
+            User::destroy($id);
 
-        return redirect('auth/user');
+            Session::flash('message', trans('auth::ui.user.message_delete', array('name' => $user->firstname)));
+
+            return redirect('auth/user');
+        }
+
+        return redirect('auth/logout');
     }
-	
 }

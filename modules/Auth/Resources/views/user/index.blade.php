@@ -54,7 +54,7 @@
                                                 <button class="btn btn-info " type="button"><i class="fa fa-refresh"></i> {{ trans('auth::ui.user.button_update') }}</button>
                                             </a>
                                             {!! Form::open(['url' => 'auth/user/'. $user->id, 'method' => 'delete']) !!}
-                                            <button class="btn btn-danger " type="submit"><i class="fa fa-wrench"></i> {{ trans('auth::ui.user.button_delete') }}</button>
+                                            <button class="btn btn-danger " type="submit"><i class="fa fa-times-circle"></i> {{ trans('auth::ui.user.button_delete') }}</button>
                                             {!! Form::close() !!}
                                             </p>
                                         </td>

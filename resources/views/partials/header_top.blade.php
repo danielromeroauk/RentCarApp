@@ -160,7 +160,7 @@
             <li>
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     <img src="{{ asset('images/photos/user-avatar.png') }}" alt="" />
-                    John Doe
+                    {{ Auth::user()->firstname.' ' .Auth::user()->lastname }}
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-usermenu pull-right">

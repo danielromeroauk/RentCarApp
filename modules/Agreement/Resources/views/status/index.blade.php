@@ -41,7 +41,7 @@
                                                 <button class="btn btn-info " type="button"><i class="fa fa-refresh"></i> {{ trans('agreement::ui.status.button_update') }}</button>
                                             </a>
                                             {!! Form::open(['url' => 'agreement/status/'. $statu->id, 'method' => 'delete']) !!}
-                                            <button class="btn btn-danger " type="submit"><i class="fa fa-wrench"></i> {{ trans('agreement::ui.status.button_delete') }}</button>
+                                            <button class="btn btn-danger " type="submit"><i class="fa fa-times-circle"></i> {{ trans('agreement::ui.status.button_delete') }}</button>
                                             {!! Form::close() !!}
                                             </p>
                                         </td>

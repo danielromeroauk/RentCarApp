@@ -17,19 +17,19 @@ class AgreementDatabaseSeeder extends Seeder {
 
     private function agreementStatusSeeders() {
 
-        \DB::table('agreements_status')->insert(array(
+        \DB::table('status')->insert(array(
             'name' => 'Vigente',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ));
 
-        \DB::table('agreements_status')->insert(array(
+        \DB::table('status')->insert(array(
             'name' => 'Cumplido',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ));
 
-        \DB::table('agreements_status')->insert(array(
+        \DB::table('status')->insert(array(
             'name' => 'Incumplido',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

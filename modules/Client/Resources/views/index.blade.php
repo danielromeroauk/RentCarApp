@@ -23,7 +23,9 @@
                     </header>
                     <div class="panel-body">
                         <div class="adv-table">
-                            <a href="{{ url('client/create') }}"><button class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i> {{ trans("client::ui.client.button_add") }}</button></a>
+                            @if(Auth::user()->can('create-clients'))
+                                <a href="{{ url('client/create') }}"><button class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i> {{ trans("client::ui.client.button_add") }}</button></a>
+                            @endif
                             <table  class="display table table-bordered table-striped" id="dynamic-table">
                                 <thead>
                                 <tr>
@@ -33,7 +35,9 @@
                                     <th>{{ trans('client::ui.country.name') }}</th>
                                     <th>{{ trans('client::ui.client.quantity_car_label') }}</th>
                                     <th>{{ trans('client::ui.client.rent_total_label') }}</th>
+                                    @if(Auth::user()->can(['update-clients', 'delete-clients']))
                                     <th>{{ trans('client::ui.client.operation_label') }}</th>
+                                    @endif
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -45,16 +49,23 @@
                                         <td>{{ $client->country->name }}</td>
                                         <td>{{ $client->quantity_car_used }}</td>
                                         <td>€ {{ $client->rent_total_amount }}</td>
+                                        @if(Auth::user()->can(['update-clients', 'delete-clients']))
                                         <td>
                                             <p>
+                                                @if(Auth::user()->can('update-clients'))
                                                 <a href="{{ url('client/' . $client->id . '/edit') }}">
                                                     <button class="btn btn-info " type="button"><i class="fa fa-refresh"></i> {{ trans('client::ui.client.button_update') }}</button>
                                                 </a>
+                                                @endif
+
+                                                    @if(Auth::user()->can('delete-clients'))
                                                 {!! Form::open(['url' => 'client/'. $client->id, 'method' => 'delete']) !!}
-                                                <button class="btn btn-danger " type="submit"><i class="fa fa-wrench"></i> {{ trans('client::ui.client.button_delete') }}</button>
+                                                <button class="btn btn-danger " type="submit"><i class="fa fa-times-circle"></i> {{ trans('client::ui.client.button_delete') }}</button>
                                                 {!! Form::close() !!}
+                                                    @endif
                                             </p>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -66,7 +77,9 @@
                                     <th>{{ trans('client::ui.country.name') }}</th>
                                     <th>{{ trans('client::ui.client.quantity_car_label') }}</th>
                                     <th>{{ trans('client::ui.client.rent_total_label') }}</th>
+                                    @if(Auth::user()->can(['update-clients', 'delete-clients']))
                                     <th>{{ trans('client::ui.client.operation_label') }}</th>
+                                    @endif
                                 </tr>
                                 </tfoot>
                             </table>

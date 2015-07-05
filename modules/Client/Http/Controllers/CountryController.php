@@ -6,6 +6,11 @@ use Modules\Client\Http\Requests\CountryRequest;
 use Pingpong\Modules\Routing\Controller;
 
 class CountryController extends Controller {
+
+    public function __construct() {
+
+        $this->middleware('auth');
+    }
 	
 	public function index() {
 

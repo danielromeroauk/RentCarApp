@@ -6,6 +6,11 @@ use Modules\Agreement\Http\Requests\AgreementStatusRequest;
 use Pingpong\Modules\Routing\Controller;
 
 class AgreementStatusController extends Controller {
+
+    public function __construct() {
+
+        $this->middleware('auth');
+    }
 	
 	public function index() {
 
