@@ -23,7 +23,9 @@
                     </header>
                     <div class="panel-body">
                         <div class="adv-table">
+                            @if(Auth::user()->can('create-agreements'))
                             <a href="{{ url('agreement/create') }}"><button class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i> {{ trans("agreement::ui.agreement.button_add") }}</button></a>
+                            @endif
                             <table  class="display table table-bordered table-striped" id="dynamic-table">
                                 <thead>
                                 <tr>
@@ -37,7 +39,9 @@
                                     <th>{{ trans('agreement::ui.agreement.registration_label') }}</th>
                                     <th>{{ trans('agreement::ui.agreement.delivery_label') }}</th>
                                     <th>{{ trans('agreement::ui.agreement.cash_label') }}</th>
+                                    @if(Auth::user()->can(['update-agreements', 'delete-agreements']))
                                     <th>{{ trans('agreement::ui.agreement.operation_label') }}</th>
+                                    @endif
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -53,16 +57,23 @@
                                         <td>{{ $agreement->registration_date }}</td>
                                         <td>{{ $agreement->delivery_date }}</td>
                                         <td>{{ $agreement->cash }}</td>
+                                        @if(Auth::user()->can(['update-agreements', 'delete-agreements']))
                                         <td>
                                             <p>
+                                                @if(Auth::user()->can('update-agreements'))
                                                 <a href="{{ url('agreement/' . $agreement->id . '/edit') }}">
                                                     <button class="btn btn-info " type="button"><i class="fa fa-refresh"></i> {{ trans('agreement::ui.agreement.button_update') }}</button>
                                                 </a>
+                                                @endif
+
+                                                    @if(Auth::user()->can('delete-agreements'))
                                                 {!! Form::open(['url' => 'agreement/'. $agreement->id, 'method' => 'delete']) !!}
                                                 <button class="btn btn-danger " type="submit"><i class="fa fa-times-circle"></i> {{ trans('agreement::ui.agreement.button_delete') }}</button>
                                                 {!! Form::close() !!}
+                                                    @endif
                                             </p>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -78,7 +89,9 @@
                                     <th>{{ trans('agreement::ui.agreement.registration_label') }}</th>
                                     <th>{{ trans('agreement::ui.agreement.delivery_label') }}</th>
                                     <th>{{ trans('agreement::ui.agreement.cash_label') }}</th>
-                                    <th>{{ trans('agreement::ui.agreement.operation_label') }}</th>
+                                    @if(Auth::user()->can(['update-agreements', 'delete-agreements']))
+                                        <th>{{ trans('agreement::ui.agreement.operation_label') }}</th>
+                                    @endif
                                 </tr>
                                 </tfoot>
                             </table>

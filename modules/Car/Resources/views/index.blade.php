@@ -23,7 +23,9 @@
                     </header>
                     <div class="panel-body">
                         <div class="adv-table">
+                            @if(Auth::user()->can('create-cars'))
                             <a href="{{ url('car/create') }}"><button class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i> {{ trans("car::ui.car.button_add") }}</button></a>
+                            @endif
                             <table  class="display table table-bordered table-striped" id="dynamic-table">
                                 <thead>
                                 <tr>
@@ -34,7 +36,9 @@
                                     <th>{{ trans('car::ui.car.sheet_label') }}</th>
                                     <th>{{ trans('car::ui.car.quantity_label') }}</th>
                                     <th>{{ trans('car::ui.car.price_label') }}</th>
+                                    @if(Auth::user()->can(['update-cars', 'delete-cars']))
                                     <th>{{ trans('car::ui.car.operation_label') }}</th>
+                                    @endif
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -47,16 +51,23 @@
                                         <td>{{ $car->sheet_number }}</td>
                                         <td>{{ $car->quantity_km }}</td>
                                         <td>{{ $car->price_by_hour }}</td>
+                                        @if(Auth::user()->can(['update-cars', 'delete-cars']))
                                         <td>
                                             <p>
+                                                @if(Auth::user()->can('update-cars'))
                                                 <a href="{{ url('car/' . $car->id . '/edit') }}">
                                                     <button class="btn btn-info " type="button"><i class="fa fa-refresh"></i> {{ trans('car::ui.car.button_update') }}</button>
                                                 </a>
+                                                @endif
+
+                                                    @if(Auth::user()->can('delete-cars'))
                                                 {!! Form::open(['url' => 'car/'. $car->id, 'method' => 'delete']) !!}
                                                 <button class="btn btn-danger " type="submit"><i class="fa fa-times-circle"></i> {{ trans('car::ui.car.button_delete') }}</button>
                                                 {!! Form::close() !!}
+                                                    @endif
                                             </p>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -69,7 +80,9 @@
                                     <th>{{ trans('car::ui.car.sheet_label') }}</th>
                                     <th>{{ trans('car::ui.car.quantity_label') }}</th>
                                     <th>{{ trans('car::ui.car.price_label') }}</th>
-                                    <th>{{ trans('car::ui.car.operation_label') }}</th>
+                                    @if(Auth::user()->can(['update-cars', 'delete-cars']))
+                                        <th>{{ trans('car::ui.car.operation_label') }}</th>
+                                    @endif
                                 </tr>
                                 </tfoot>
                             </table>

@@ -23,7 +23,9 @@
                     </header>
                     <div class="panel-body">
                         <div class="adv-table">
+                            @if(Auth::user()->can('create-roles'))
                             <a href="{{ url('auth/role/create') }}"><button class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i> {{ trans("auth::ui.role.button_add") }}</button></a>
+                            @endif
                             <table  class="display table table-bordered table-striped" id="dynamic-table">
                                 <thead>
                                 <tr>
@@ -31,7 +33,9 @@
                                     <th>{{ trans('auth::ui.role.display') }}</th>
                                     <th>{{ trans('auth::ui.role.description') }}</th>
                                     <th>{{ trans('auth::ui.permission.names') }}</th>
+                                    @if(Auth::user()->can(['update-roles', 'delete-roles']))
                                     <th>{{ trans('auth::ui.role.operation_label') }}</th>
+                                    @endif
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -48,16 +52,23 @@
                                                 </li>
                                                 @endforeach
                                             </ul></td>
+                                        @if(Auth::user()->can(['update-roles', 'delete-roles']))
                                         <td>
                                             <p>
+                                                @if(Auth::user()->can('update-roles'))
                                             <a href="{{ url('auth/role/' . $role->id . '/edit') }}">
                                                 <button class="btn btn-info " type="button"><i class="fa fa-refresh"></i> {{ trans('auth::ui.role.button_update') }}</button>
                                             </a>
+                                                @endif
+
+                                                    @if(Auth::user()->can('delete-roles'))
                                             {!! Form::open(['url' => 'auth/role/'. $role->id, 'method' => 'delete']) !!}
                                             <button class="btn btn-danger " type="submit"><i class="fa fa-times-circle"></i> {{ trans('auth::ui.role.button_delete') }}</button>
                                             {!! Form::close() !!}
+                                                    @endif
                                             </p>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -67,7 +78,9 @@
                                     <th>{{ trans('auth::ui.role.display') }}</th>
                                     <th>{{ trans('auth::ui.role.description') }}</th>
                                     <th>{{ trans('auth::ui.permission.names') }}</th>
-                                    <th>{{ trans('auth::ui.role.operation_label') }}</th>
+                                    @if(Auth::user()->can(['update-roles', 'delete-roles']))
+                                        <th>{{ trans('auth::ui.role.operation_label') }}</th>
+                                    @endif
                                 </tr>
                                 </tfoot>
                             </table>

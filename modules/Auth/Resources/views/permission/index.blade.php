@@ -23,14 +23,18 @@
                     </header>
                     <div class="panel-body">
                         <div class="adv-table">
+                            @if(Auth::user()->can('create-permissions'))
                             <a href="{{ url('auth/permission/create') }}"><button class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i> {{ trans("auth::ui.permission.button_add") }}</button></a>
+                            @endif
                             <table  class="display table table-bordered table-striped" id="dynamic-table">
                                 <thead>
                                 <tr>
                                     <th>{{ trans('auth::ui.permission.name_label') }}</th>
                                     <th>{{ trans('auth::ui.permission.display') }}</th>
                                     <th>{{ trans('auth::ui.permission.description') }}</th>
+                                    @if(Auth::user()->can(['update-permissions', 'delete-permissions']))
                                     <th>{{ trans('auth::ui.permission.operation_label') }}</th>
+                                    @endif
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -39,16 +43,23 @@
                                         <td>{{ $permission->name }}</td>
                                         <td>{{ $permission->display_name }}</td>
                                         <td>{{ $permission->description }}</td>
+                                        @if(Auth::user()->can(['update-permissions', 'delete-permissions']))
                                         <td>
                                             <p>
+                                                @if(Auth::user()->can('update-permissions'))
                                             <a href="{{ url('auth/permission/' . $permission->id . '/edit') }}">
                                                 <button class="btn btn-info " type="button"><i class="fa fa-refresh"></i> {{ trans('auth::ui.permission.button_update') }}</button>
                                             </a>
+                                                @endif
+
+                                                    @if(Auth::user()->can('delete-permissions'))
                                             {!! Form::open(['url' => 'auth/permission/'. $permission->id, 'method' => 'delete']) !!}
                                             <button class="btn btn-danger " type="submit"><i class="fa fa-times-circle"></i> {{ trans('auth::ui.permission.button_delete') }}</button>
                                             {!! Form::close() !!}
+                                                    @endif
                                             </p>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -57,7 +68,9 @@
                                     <th>{{ trans('auth::ui.permission.name_label') }}</th>
                                     <th>{{ trans('auth::ui.permission.display') }}</th>
                                     <th>{{ trans('auth::ui.permission.description') }}</th>
-                                    <th>{{ trans('auth::ui.permission.operation_label') }}</th>
+                                    @if(Auth::user()->can(['update-permissions', 'delete-permissions']))
+                                        <th>{{ trans('auth::ui.permission.operation_label') }}</th>
+                                    @endif
                                 </tr>
                                 </tfoot>
                             </table>

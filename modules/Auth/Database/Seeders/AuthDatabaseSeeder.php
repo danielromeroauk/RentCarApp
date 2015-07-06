@@ -13,15 +13,17 @@ class AuthDatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		$this->permissionsSeeder();
+		$this->permissionsUserSeeder();
+        $this->permissionsRoleSeeder();
+        $this->permissionsSeeder();
 		$this->rolesSeeder();
-        $this->permissionRoleSeeder();
+        $this->addPermissionRoleSeeder();
         $this->permissionsAllSeeder();
 		$this->usersSeeder();
 		$this->roleUserSeeder();
 	}
 
-	private function permissionsSeeder(){
+	private function permissionsUserSeeder(){
 
 		DB::table('permissions')->insert(array(
             'name' => 'create-users',
@@ -56,6 +58,76 @@ class AuthDatabaseSeeder extends Seeder {
         ));
 	}
 
+    private function permissionsRoleSeeder(){
+
+        DB::table('permissions')->insert(array(
+            'name' => 'create-roles',
+            'display_name' => 'Create Roles',
+            'description' => 'Create Roles',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
+
+        DB::table('permissions')->insert(array(
+            'name' => 'read-roles',
+            'display_name' => 'Read Roles',
+            'description' => 'List Roles',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
+
+        DB::table('permissions')->insert(array(
+            'name' => 'update-roles',
+            'display_name' => 'Update Roles',
+            'description' => 'Update Roles',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
+
+        DB::table('permissions')->insert(array(
+            'name' => 'delete-roles',
+            'display_name' => 'Delete Roles',
+            'description' => 'Delete Roles',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
+    }
+
+    private function permissionsSeeder(){
+
+        DB::table('permissions')->insert(array(
+            'name' => 'create-permissions',
+            'display_name' => 'Create Permissions',
+            'description' => 'Create Permissions',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
+
+        DB::table('permissions')->insert(array(
+            'name' => 'read-permissions',
+            'display_name' => 'Read Permissions',
+            'description' => 'List Permissions',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
+
+        DB::table('permissions')->insert(array(
+            'name' => 'update-permissions',
+            'display_name' => 'Update Permissions',
+            'description' => 'Update Permissions',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
+
+        DB::table('permissions')->insert(array(
+            'name' => 'delete-permissions',
+            'display_name' => 'Delete Permissions',
+            'description' => 'Delete Permissions',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
+    }
+
     private function permissionsAllSeeder(){
 
         $name = 'Tables_in_'.env('DB_DATABASE', 'forge');
@@ -63,7 +135,8 @@ class AuthDatabaseSeeder extends Seeder {
 
         foreach($data as $value) {
 
-            if(($value->$name != 'users') && ($value->$name != 'migrations')) {
+            if(($value->$name != 'users') && ($value->$name != 'migrations') &&
+                ($value->$name != 'roles') && ($value->$name != 'permissions')) {
                 DB::table('permissions')->insert(array(
                     'name' => 'create-'.$value->$name,
                     'display_name' => 'Create '.ucwords($value->$name),
@@ -74,8 +147,8 @@ class AuthDatabaseSeeder extends Seeder {
 
                 DB::table('permissions')->insert(array(
                     'name' => 'read-'.$value->$name,
-                    'display_name' => 'Read '.$value->$name,
-                    'description' => 'List '.$value->$name,
+                    'display_name' => 'Read '.ucwords($value->$name),
+                    'description' => 'List '.ucwords($value->$name),
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ));
@@ -110,9 +183,9 @@ class AuthDatabaseSeeder extends Seeder {
         ));
 	}
 
-    private function permissionRoleSeeder(){
+    private function addPermissionRoleSeeder(){
 
-        for($i=1; $i < 5; $i++){
+        for($i=1; $i < 13; $i++){
             DB::table('permission_role')->insert(array(
                 'permission_id' => $i,
                 'role_id' => 1

@@ -6,7 +6,6 @@ return [
 
     'header_top'        =>  [
         'profile'       =>  'Perfil',
-        'settings'      =>  'Configuración',
         'logout'        =>  'Salir'
     ],
 

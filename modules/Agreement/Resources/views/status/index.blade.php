@@ -23,35 +23,50 @@
                     </header>
                     <div class="panel-body">
                         <div class="adv-table">
+                            @if(Auth::user()->can('create-status'))
                             <a href="{{ url('agreement/status/create') }}"><button class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i> {{ trans("agreement::ui.status.button_add") }}</button></a>
+                            @endif
                             <table  class="display table table-bordered table-striped" id="dynamic-table">
                                 <thead>
                                 <tr>
                                     <th>{{ trans('agreement::ui.status.name_label') }}</th>
+
+                                    @if(Auth::user()->can(['update-status', 'delete-status']))
                                     <th>{{ trans('agreement::ui.status.operation_label') }}</th>
+                                    @endif
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($status as $statu)
                                     <tr class="gradeX">
                                         <td>{{ $statu->name}}</td>
+                                        @if(Auth::user()->can(['update-status', 'delete-status']))
                                         <td>
                                             <p>
+                                                @if(Auth::user()->can('update-status'))
                                             <a href="{{ url('agreement/status/' . $statu->id . '/edit') }}">
                                                 <button class="btn btn-info " type="button"><i class="fa fa-refresh"></i> {{ trans('agreement::ui.status.button_update') }}</button>
                                             </a>
+                                                @endif
+
+                                                    @if(Auth::user()->can('delete-status'))
                                             {!! Form::open(['url' => 'agreement/status/'. $statu->id, 'method' => 'delete']) !!}
                                             <button class="btn btn-danger " type="submit"><i class="fa fa-times-circle"></i> {{ trans('agreement::ui.status.button_delete') }}</button>
                                             {!! Form::close() !!}
+                                                    @endif
                                             </p>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
                                 <tfoot>
                                 <tr>
                                     <th>{{ trans('agreement::ui.status.name_label') }}</th>
-                                    <th>{{ trans('agreement::ui.status.operation_label') }}</th>
+
+                                    @if(Auth::user()->can(['update-status', 'delete-status']))
+                                        <th>{{ trans('agreement::ui.status.operation_label') }}</th>
+                                    @endif
                                 </tr>
                                 </tfoot>
                             </table>

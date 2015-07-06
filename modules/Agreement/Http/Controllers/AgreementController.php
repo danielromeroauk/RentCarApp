@@ -1,5 +1,6 @@
 <?php namespace Modules\Agreement\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Modules\Agreement\Entities\Agreement;
 use Modules\Agreement\Entities\AgreementStatus;
 use Modules\Car\Entities\Car;
@@ -15,21 +16,30 @@ class AgreementController extends Controller {
 
     public function index() {
 
-        $agreements = Agreement::all();
+        if(Auth::user()->can('read-agreements')) {
 
-        return view('agreement::index', compact('agreements'));
+            $agreements = Agreement::all();
+
+            return view('agreement::index', compact('agreements'));
+        }
+
+        return redirect('auth/logout');
     }
 
     public function create() {
 
-        $clients = Client::orderBy('lastname', 'asc')->lists('lastname', 'id');
+        if(Auth::user()->can('create-agreements')) {
 
-        $cars = Car::orderBy('sheet_number', 'asc')->lists('sheet_number', 'id');
+            $clients = Client::orderBy('lastname', 'asc')->lists('lastname', 'id');
 
-        $status = AgreementStatus::orderBy('name', 'asc')->lists('name', 'id');
+            $cars = Car::orderBy('sheet_number', 'asc')->lists('sheet_number', 'id');
 
-        return view('agreement::create', compact('clients', 'cars', 'status'));
+            $status = AgreementStatus::orderBy('name', 'asc')->lists('name', 'id');
 
+            return view('agreement::create', compact('clients', 'cars', 'status'));
+        }
+
+        return redirect('auth/logout');
     }
 
     public function store() {

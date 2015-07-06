@@ -1,5 +1,6 @@
 <?php namespace Modules\Client\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Modules\Client\Entities\Country;
 use Modules\Client\Http\Requests\CountryRequest;
@@ -14,47 +15,75 @@ class CountryController extends Controller {
 	
 	public function index() {
 
+        if(Auth::user()->can('read-countries')) {
+
         $countries = Country::all();
 
 		return view('client::country.index', compact('countries'));
+        }
+
+        return redirect('auth/logout');
 	}
 
     public function create() {
 
-        return view('client::country.create');
+        if(Auth::user()->can('create-countries')) {
+
+            return view('client::country.create');
+        }
+
+        return redirect('auth/logout');
     }
 
     public function store(CountryRequest $request) {
 
-        $data = Country::create($request->all());
+        if(Auth::user()->can('create-countries')) {
 
-        $country = Country::findOrFail($data->id);
+            $data = Country::create($request->all());
 
-       Session::flash('message', trans('client::ui.country.message_create', array('name' => $country->name)));
+            $country = Country::findOrFail($data->id);
 
-        return redirect('client/country/create');
+            Session::flash('message', trans('client::ui.country.message_create', array('name' => $country->name)));
+
+            return redirect('client/country/create');
+        }
+
+        return redirect('auth/logout');
 	
     }
 
     public function edit($id) {
 
-        $country = Country::findOrFail($id);
+        if(Auth::user()->can('update-countries')) {
 
-        return view('client::country.edit', compact('country'));
+            $country = Country::findOrFail($id);
+
+            return view('client::country.edit', compact('country'));
+        }
+
+        return redirect('auth/logout');
     }
 
     public function update($id, CountryRequest $request) {
 
-        $country = Country::findOrFail($id);
+        if(Auth::user()->can('update-countries')) {
 
-        $country->update($request->all());
+            $country = Country::findOrFail($id);
 
-        Session::flash('message', trans('client::ui.country.message_update', array('name' => $country->name)));
+            $country->update($request->all());
 
-        return redirect('client/country');
+            Session::flash('message', trans('client::ui.country.message_update', array('name' => $country->name)));
+
+            return redirect('client/country');
+        }
+
+        return redirect('auth/logout');
     }
 
     public function destroy($id) {
+
+        if(Auth::user()->can('delete-countries')) {
+
         $country = Country::findOrFail($id);
 
         Country::destroy($id);
@@ -62,5 +91,8 @@ class CountryController extends Controller {
         Session::flash('message', trans('client::ui.country.message_delete', array('name' => $country->name)));
 
         return redirect('client/country');
+        }
+
+        return redirect('auth/logout');
     }
 }

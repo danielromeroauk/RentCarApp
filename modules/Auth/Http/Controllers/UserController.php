@@ -22,6 +22,7 @@ class UserController extends Controller {
 
             return view('auth::user.index', compact('users'));
         }
+
         return redirect('auth/logout');
 	}
 
@@ -33,6 +34,7 @@ class UserController extends Controller {
 
             return view('auth::user.create', compact('roles'));
         }
+
         return redirect('auth/logout');
     }
 
@@ -55,6 +57,7 @@ class UserController extends Controller {
 
             return redirect('auth/user/create');
         }
+
         return redirect('auth/logout');
     }
 

@@ -1,5 +1,6 @@
 <?php namespace Modules\Agreement\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Modules\Agreement\Entities\AgreementStatus;
 use Modules\Agreement\Http\Requests\AgreementStatusRequest;
@@ -14,17 +15,29 @@ class AgreementStatusController extends Controller {
 	
 	public function index() {
 
-        $status = AgreementStatus::all();
+        if(Auth::user()->can('read-status')) {
 
-		return view('agreement::status.index', compact('status'));
+            $status = AgreementStatus::all();
+
+            return view('agreement::status.index', compact('status'));
+        }
+
+        return redirect('auth/logout');
 	}
 
     public function create() {
 
-        return view('agreement::status.create');
+        if(Auth::user()->can('create-status')) {
+
+            return view('agreement::status.create');
+        }
+
+        return redirect('auth/logout');
     }
     
     public function store(AgreementStatusRequest $request) {
+
+        if(Auth::user()->can('create-status')) {
         
         $data = AgreementStatus::create($request->all());
         
@@ -33,17 +46,26 @@ class AgreementStatusController extends Controller {
         Session::flash('message', trans('agreement::ui.status.message_create', array('name' => $status->name)));
 
         return redirect('agreement/status/create');
-        
+        }
+
+        return redirect('auth/logout');
     }
 
     public function edit($id) {
 
+        if(Auth::user()->can('update-status')) {
+
         $status = AgreementStatus::findOrFail($id);
 
         return view('agreement::status.edit', compact('status'));
+        }
+
+        return redirect('auth/logout');
     }
 
     public function update($id, AgreementStatusRequest $request) {
+
+        if(Auth::user()->can('update-status')) {
 
         $status = AgreementStatus::findOrFail($id);
 
@@ -52,9 +74,14 @@ class AgreementStatusController extends Controller {
         Session::flash('message', trans('agreement::ui.status.message_update', array('name' => $status->name)));
 
         return redirect('agreement/status');
+        }
+
+        return redirect('auth/logout');
     }
 
     public function destroy($id) {
+
+        if(Auth::user()->can('delete-status')) {
 
         $status = AgreementStatus::findOrFail($id);
 
@@ -63,6 +90,9 @@ class AgreementStatusController extends Controller {
         Session::flash('message', trans('agreement::ui.status.message_delete', array('name' => $status->name)));
 
         return redirect('agreement/status');
+        }
+
+        return redirect('auth/logout');
     }
 	
 }

@@ -1,5 +1,6 @@
 <?php namespace Modules\Car\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Modules\Car\Entities\Brand;
 use Modules\Car\Entities\Car;
@@ -18,12 +19,20 @@ class CarController extends Controller {
 	
 	public function index() {
 
+        if(Auth::user()->can('read-cars')) {
+
         $cars = Car::all();
 
 		return view('car::index', compact('cars'));
+
+        }
+
+        return redirect('auth/logout');
 	}
 
     public function create() {
+
+        if(Auth::user()->can('create-cars')) {
 
         $brands = Brand::orderBy('name', 'asc')->lists('name', 'id');
         $prototypes = Prototype::orderBy('name', 'asc')->lists('name', 'id');
@@ -31,9 +40,15 @@ class CarController extends Controller {
         $conditions = Condition::orderBy('name', 'asc')->lists('name', 'id');
 
         return view('car::create', compact('brands', 'prototypes', 'colors', 'conditions'));
+
+        }
+
+        return redirect('auth/logout');
     }
 
     public function store(CarRequest $request) {
+
+        if(Auth::user()->can('create-cars')) {
 
         $data = Car::create($request->all());
 
@@ -44,9 +59,15 @@ class CarController extends Controller {
         );
 
         return redirect('car/create');
+
+        }
+
+        return redirect('auth/logout');
     }
 
     public function edit($id) {
+
+        if(Auth::user()->can('update-cars')) {
 
         $car = Car::findOrFail($id);
 
@@ -57,10 +78,15 @@ class CarController extends Controller {
 
         return view('car::edit', compact('car', 'brands', 'prototypes', 'colors', 'conditions'));
 
+        }
+
+        return redirect('auth/logout');
+
     }
 
-    public function update($id, CarRequest $request)
-    {
+    public function update($id, CarRequest $request) {
+
+        if(Auth::user()->can('update-cars')) {
 
         $car = Car::findOrFail($id);
 
@@ -71,9 +97,15 @@ class CarController extends Controller {
         );
 
         return redirect('car');
+
+        }
+
+        return redirect('auth/logout');
     }
 
     public function destroy($id) {
+
+        if(Auth::user()->can('delete-cars')) {
 
         $car = Car::findOrFail($id);
 
@@ -84,6 +116,10 @@ class CarController extends Controller {
         );
 
         return redirect('car');
+
+        }
+
+        return redirect('auth/logout');
     }
 
 
