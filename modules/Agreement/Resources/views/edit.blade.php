@@ -1,31 +1,36 @@
 @extends('layouts.master')
 
+@section('style')
+    <link href="{{ asset('js/bootstrap-datetimepicker/css/datetimepicker-custom.css') }}" rel="stylesheet" />
+@stop
+
 @section('content')
     <section class="wrapper">
         @include('partials.message')
-        <div class="row">
-            <div class="col-lg-6">
-                <section class="panel">
-                    <header class="panel-heading">
-                        {{ trans('car::ui.car.edit_car') }}
-                    </header>
-                    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">{{ trans('agreement::ui.agreement.new_agreement') }}</div>
+                        <div class="panel-body">
+                            @include('errors.form_error')
 
-                        @include('errors.form_error')
+                            {!! Form::model($agreement, ['method' => 'PUT', 'class' => 'cmxform form-horizontal', 'id' => 'agreementForm', 'route' => ['agreement.update', $agreement->id]]) !!}
 
-                        {!! Form::model($car, ['method' => 'PUT', 'class' => 'cmxform form-horizontal', 'id' => 'carForm', 'route' => ['car.update', $car->id]]) !!}
+                            @include('agreement::form', array('agreement' => $agreement) + compact('clients', 'cars', 'status'), ['button' => trans('agreement::ui.agreement.button_update')])
 
-                        @include('car::form', array('car' => $car) + compact('brands', 'prototypes', 'colors', 'conditions'), ['button' => trans('car::ui.car.button_update')])
-
-                        {!! Form::close() !!}
+                            {!! Form::close() !!}
+                        </div>
                     </div>
-                </section>
+                </div>
             </div>
         </div>
     </section>
-@stop
+@endsection
 
 @section('script')
     <script src="{{ asset('js/validation/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('js/validation/validation-init.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ asset('js/pickers-init.js') }}"></script>
 @stop

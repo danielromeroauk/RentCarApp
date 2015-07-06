@@ -25,16 +25,16 @@ return [
         'registration_label'=>  'Fecha de Alquiler',
         'delivery_label'    =>  'Fecha de Entrega',
         'to_label'          =>  'A',
-        'cash_label'        =>  'Precio en Efectivo (€)',
+        'cash_label'        =>  'Precio en Efectivo',
         'operation_label'   =>  'Operaciones',
         'new_agreement'     =>  'Nuevo Contrato',
         'edit_agreement'    =>  'Editar Contrato',
         'button_update'     =>  'Actualizar',
         'button_delete'     =>  'Eliminar',
         'button_add'        =>  'Agregar',
-        'message_delete'    =>  'El contrato del cliente :name ha sido eliminado satisfactoriamente',
-        'message_create'    =>  'El contrato del cliente :name ha sido creado satisfactoriamente',
-        'message_update'    =>  'El contrato del cliente :name ha sido actualizado satisfactoriamente'
+        'message_delete'    =>  'El contrato :code del cliente :name ha sido eliminado satisfactoriamente',
+        'message_create'    =>  'El contrato :code del cliente :name ha sido creado satisfactoriamente',
+        'message_update'    =>  'El contrato :code del cliente :name ha sido actualizado satisfactoriamente'
     ],
 
 ];

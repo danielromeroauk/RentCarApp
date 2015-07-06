@@ -59,7 +59,7 @@ class ClientController extends Controller {
 
     public function edit($id) {
 
-        if(Auth::user()->can('edit-clients')) {
+        if(Auth::user()->can('update-clients')) {
 
             $client = Client::findOrFail($id);
 
@@ -73,7 +73,7 @@ class ClientController extends Controller {
 
     public function update($id, ClientRequest $request) {
 
-        if(Auth::user()->can('edit-clients')) {
+        if(Auth::user()->can('update-clients')) {
 
             $client = Client::findOrFail($id);
 

@@ -10,11 +10,7 @@ class Agreement extends Model {
         'code',
         'client_id',
         'car_id',
-        'car_brand_id',
-        'car_prototype_id',
-        'car_color_id',
         'agreement_status_id',
-        'sheet_car',
         'registration_date',
         'delivery_date',
         'cash'

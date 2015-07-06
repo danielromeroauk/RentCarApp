@@ -30,8 +30,8 @@
                                 <thead>
                                 <tr>
                                     <th>{{ trans('agreement::ui.agreement.code') }}</th>
-                                    <th>{{ trans('client::ui.client.lastname_label') }}</th>
                                     <th>{{ trans('client::ui.client.firstname_label') }}</th>
+                                    <th>{{ trans('client::ui.client.lastname_label') }}</th>
                                     <th>{{ trans('car::ui.brand.name') }}</th>
                                     <th>{{ trans('car::ui.prototype.name') }}</th>
                                     <th>{{ trans('car::ui.color.name') }}</th>
@@ -48,15 +48,15 @@
                                 @foreach($agreements as $agreement)
                                     <tr class="gradeX">
                                         <td>{{ $agreement->code }}</td>
-                                        <td>{{ $agreement->client->lastname }}</td>
                                         <td>{{ $agreement->client->firstname }}</td>
+                                        <td>{{ $agreement->client->lastname }}</td>
                                         <td>{{ $agreement->car->brand->name }}</td>
                                         <td>{{ $agreement->car->prototype->name }}</td>
                                         <td>{{ $agreement->car->color->name }}</td>
                                         <td>{{ $agreement->status->name }}</td>
                                         <td>{{ $agreement->registration_date }}</td>
                                         <td>{{ $agreement->delivery_date }}</td>
-                                        <td>{{ $agreement->cash }}</td>
+                                        <td>€ {{ $agreement->cash }}</td>
                                         @if(Auth::user()->can(['update-agreements', 'delete-agreements']))
                                         <td>
                                             <p>
@@ -80,8 +80,8 @@
                                 <tfoot>
                                 <tr>
                                     <th>{{ trans('agreement::ui.agreement.code') }}</th>
-                                    <th>{{ trans('client::ui.client.lastname_label') }}</th>
                                     <th>{{ trans('client::ui.client.firstname_label') }}</th>
+                                    <th>{{ trans('client::ui.client.lastname_label') }}</th>
                                     <th>{{ trans('car::ui.brand.name') }}</th>
                                     <th>{{ trans('car::ui.prototype.name') }}</th>
                                     <th>{{ trans('car::ui.color.name') }}</th>

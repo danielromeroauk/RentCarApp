@@ -22,17 +22,11 @@ class AgreementRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            'code' => 'required',
             'client_id' => 'required',
             'car_id' => 'required',
-            'car_brand_id' => 'required',
-            'car_prototype_id' => 'required',
-            'car_color_id' => 'required',
             'agreement_status_id' => 'required',
-            'sheet_car' => 'required',
             'registration_date' => 'required',
-            'delivery_date' => 'required',
-            'cash' => 'required'
+            'delivery_date' => 'required'
 		];
 	}
 

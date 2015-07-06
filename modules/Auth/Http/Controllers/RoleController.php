@@ -30,7 +30,7 @@ class RoleController extends Controller {
 
         if(Auth::user()->can('create-roles')) {
 
-		$permissions = Permission::orderBy('display_name', 'asc')->lists('display_name', 'id');
+		$permissions = Permission::lists('display_name', 'id');
 		
 		return view('auth::role.create', compact('permissions'));
         }
