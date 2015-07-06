@@ -47,7 +47,7 @@
     <label  class="col-lg-2 col-sm-2 control-label">{{ trans('auth::ui.role.names') }}</label>
     <div class="col-lg-10">
 
-    {!! Form::select('role_id[]', $roles, Input::old('role_id'), array(
+    {!! Form::select('role_id[]', $roles, isset($roles_user) ? $roles_user : null, array(
     'multiple' => true, 'class' => 'multi-select', 'id' => 'roleSelect')) !!}
 
     </div>

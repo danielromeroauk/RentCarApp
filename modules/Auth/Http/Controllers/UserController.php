@@ -1,5 +1,6 @@
 <?php namespace Modules\Auth\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Modules\Auth\Entities\User;
@@ -65,20 +66,43 @@ class UserController extends Controller {
 
         if(Auth::user()->can('update-users')) {
 
-            $user = User::with('roles')->findOrFail($id);
+            $user = User::findOrFail($id);
+
+            $roles_user = User::find($id)->roles()->lists('role_id')->toArray();
 
             $roles = Role::orderBy('display_name', 'asc')->lists('display_name', 'id');
 
-            return view('auth::user.edit', compact('user', 'roles'));
+            return view('auth::user.edit', compact('user', 'roles', 'roles_user'));
         }
 
         return redirect('auth/logout');
     }
 
-    public function update($id){
+    public function update($id, UserRequest $request){
 
-        if($this->user->can('update-users')) {
+        if(Auth::user()->can('update-users')) {
 
+            $data = ! $request->has('password') ? $request->except('password') : array(
+                    'firstname' =>  $request->input('firstname'),
+                    'lastname'  =>  $request->input('lastname'),
+                    'email'     =>  $request->input('email'),
+                    'password'  =>  \Hash::make($request->input('password')),
+            );
+
+            $user = User::findOrFail($id);
+
+            $user->update($data);
+
+            if($user->roles->count()) {
+
+                $user->roles()->detach($user->roles()->lists('role_id')->toArray());
+            }
+
+            $user->attachRoles($request->input('role_id'));
+
+            Session::flash('message', trans('auth::ui.user.message_update', array('name' => $user->firstname)));
+
+            return redirect('auth/user');
         }
 
         return redirect('auth/logout');
@@ -98,5 +122,31 @@ class UserController extends Controller {
         }
 
         return redirect('auth/logout');
+    }
+
+    public function show() {
+
+        return view('auth::user.form_change_password');
+
+    }
+
+    public function changePassword(Request $request) {
+
+        $this->validate($request, [
+            'password' => 'required|confirmed|min:5',
+            'password_confirmation' => 'required|min:5',
+        ]);
+
+        $user = User::findOrFail(Auth::user()->id);
+
+        $data = array(
+            'password' => \Hash::make($request->input('password'))
+        );
+
+        $user->update($data);
+
+        Session::flash('message', trans('auth::ui.user.message_change_password'));
+
+        return redirect('auth/user/change-password');
     }
 }

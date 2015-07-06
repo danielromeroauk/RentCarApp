@@ -10,9 +10,7 @@ class Client extends Model {
         'firstname',
         'lastname',
         'passport',
-        'countries_id',
-        'quantity_car_used',
-        'rent_total_amount'
+        'countries_id'
     ];
 
     public function country() {

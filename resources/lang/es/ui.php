@@ -5,7 +5,7 @@ return [
     'title'             =>  'RentCar',
 
     'header_top'        =>  [
-        'profile'       =>  'Perfil',
+        'change_password'       =>  'Cambiar Contraseña',
         'logout'        =>  'Salir'
     ],
 

@@ -17,7 +17,7 @@
 
                             {!! Form::model($role, ['method' => 'PUT', 'route' => ['auth.role.update', $role->id], 'class' => 'cmxform form-horizontal', 'id' => 'nameForm']) !!}
 
-                            @include('auth::role.form', array('role' => $role) + compact('permissions'), ['button' => trans('auth::ui.role.button_update')])
+                            @include('auth::role.form', array('role' => $role) + compact('permissions', 'role_permission'), ['button' => trans('auth::ui.role.button_update')])
 
                             {!! Form::close() !!}
                         </div>

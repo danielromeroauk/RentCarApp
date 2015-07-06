@@ -19,8 +19,6 @@ class CreateClientsTable extends Migration {
             $table->string('lastname');
             $table->string('passport', 5);
             $table->integer('countries_id')->unsigned();
-            $table->smallInteger('quantity_car_used');
-            $table->decimal('rent_total_amount');
             $table->timestamps();
             $table->foreign('countries_id')
                   ->references('id')

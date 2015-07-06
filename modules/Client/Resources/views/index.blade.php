@@ -33,8 +33,6 @@
                                     <th>{{ trans('client::ui.client.lastname_label') }}</th>
                                     <th>{{ trans('client::ui.client.passport_label') }}</th>
                                     <th>{{ trans('client::ui.country.name') }}</th>
-                                    <th>{{ trans('client::ui.client.quantity_car_label') }}</th>
-                                    <th>{{ trans('client::ui.client.rent_total_label') }}</th>
                                     @if(Auth::user()->can(['update-clients', 'delete-clients']))
                                     <th>{{ trans('client::ui.client.operation_label') }}</th>
                                     @endif
@@ -47,8 +45,6 @@
                                         <td>{{ $client->lastname }}</td>
                                         <td>{{ $client->passport }}</td>
                                         <td>{{ $client->country->name }}</td>
-                                        <td>{{ $client->quantity_car_used }}</td>
-                                        <td>€ {{ $client->rent_total_amount }}</td>
                                         @if(Auth::user()->can(['update-clients', 'delete-clients']))
                                         <td>
                                             <p>
@@ -75,8 +71,6 @@
                                     <th>{{ trans('client::ui.client.lastname_label') }}</th>
                                     <th>{{ trans('client::ui.client.passport_label') }}</th>
                                     <th>{{ trans('client::ui.country.name') }}</th>
-                                    <th>{{ trans('client::ui.client.quantity_car_label') }}</th>
-                                    <th>{{ trans('client::ui.client.rent_total_label') }}</th>
                                     @if(Auth::user()->can(['update-clients', 'delete-clients']))
                                     <th>{{ trans('client::ui.client.operation_label') }}</th>
                                     @endif

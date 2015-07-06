@@ -60,19 +60,36 @@ class RoleController extends Controller {
 
         if(Auth::user()->can('update-roles')) {
 
-        $role = Role::with('permissions')->findOrFail($id);
+        $role = Role::findOrFail($id);
 
-        $permissions = Permission::orderBy('display_name', 'asc')->lists('display_name', 'id');
+        $role_permission = Role::find($id)->permissions()->lists('permission_id')->toArray();
 
-        return view('auth::role.edit', compact('role', 'permissions'));
+        $permissions = Permission::lists('display_name', 'id');
+
+        return view('auth::role.edit', compact('role', 'permissions', 'role_permission'));
         }
 
         return redirect('auth/logout');
     }
 
-    public function update($id){
+    public function update($id, RoleRequest $request){
 
         if(Auth::user()->can('update-roles')) {
+
+            $role = Role::findOrFail($id);
+
+            $role->update($request->all());
+
+            if($role->permissions->count()) {
+
+               $role->permissions()->detach($role->permissions()->lists('permission_id')->toArray());
+            }
+
+            $role->attachPermissions($request->input('permission_id'));
+
+            Session::flash('message', trans('auth::ui.role.message_update', array('name' => $role->name)));
+
+            return redirect('auth/role');
 
         }
 

@@ -23,8 +23,6 @@ return [
         'firstname_label'   =>  'Nombre',
         'lastname_label'    =>  'Apellidos',
         'passport_label'    =>  'Número Pasaporte',
-        'quantity_car_label'=>  'Veces que usó el Coche',
-        'rent_total_label'  =>  'Precio Total (€)',
         'operation_label'   =>  'Operaciones',
         'new_client'        =>  'Nuevo Cliente',
         'edit_client'       =>  'Editar Cliente',

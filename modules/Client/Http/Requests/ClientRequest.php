@@ -25,9 +25,7 @@ class ClientRequest extends FormRequest {
             'firstname' => 'required|string|alpha',
             'lastname' => 'required',
             'passport' => 'required|size:5',
-            'countries_id' => 'required|numeric',
-            'quantity_car_used' => 'required|numeric',
-            'rent_total_amount' => 'required|numeric'
+            'countries_id' => 'required|numeric'
         ];
     }
 

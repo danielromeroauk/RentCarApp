@@ -9,4 +9,5 @@ Route::group(['prefix' => '/', 'namespace' => 'Modules\Auth\Http\Controllers'], 
     Route::resource('auth/permission', 'PermissionController');
     Route::resource('auth/role', 'RoleController');
     Route::resource('auth/user', 'UserController');
+    Route::post('/auth/user/change-password', ['as' => 'user.change-password', 'uses' => 'UserController@changePassword']);
 });
