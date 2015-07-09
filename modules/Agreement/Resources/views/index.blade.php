@@ -71,6 +71,10 @@
                                                 <button class="btn btn-danger " type="submit"><i class="fa fa-times-circle"></i> {{ trans('agreement::ui.agreement.button_delete') }}</button>
                                                 {!! Form::close() !!}
                                                     @endif
+
+                                                        <a href="{{ url('agreement/' . $agreement->id . '/download-pdf') }}" target="_blank">
+                                                            <button class="btn btn-default" type="button" ><i class="fa fa-download"></i> {{ trans('agreement::ui.agreement.button_pdf') }}</button>
+                                                        </a>
                                             </p>
                                         </td>
                                         @endif

@@ -32,6 +32,7 @@ return [
         'button_update'     =>  'Actualizar',
         'button_delete'     =>  'Eliminar',
         'button_add'        =>  'Agregar',
+        'button_pdf'        =>  'PDF',
         'message_delete'    =>  'El contrato :code del cliente :name ha sido eliminado satisfactoriamente',
         'message_create'    =>  'El contrato :code del cliente :name ha sido creado satisfactoriamente',
         'message_update'    =>  'El contrato :code del cliente :name ha sido actualizado satisfactoriamente'

@@ -149,7 +149,8 @@ return [
          */
         Collective\Html\HtmlServiceProvider::class,
         Pingpong\Modules\ModulesServiceProvider::class,
-		  Zizaco\Entrust\EntrustServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -201,7 +202,8 @@ return [
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
         'Module'    => Pingpong\Modules\Facades\Module::class,
-		  'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'PDF'       => Barryvdh\DomPDF\Facade::class,
 
     ],
 

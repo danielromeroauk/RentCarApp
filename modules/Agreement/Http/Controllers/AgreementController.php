@@ -150,6 +150,15 @@ class AgreementController extends Controller {
         return redirect('auth/logout');
     }
 
+    public function printPdf($id) {
+
+        $data = Agreement::getAgreementById($id);
+
+        $pdf = \PDF::loadView('agreement::template_pdf', array('data' => $data))
+                ->setOrientation('landscape');
+        return $pdf->stream();
+    }
+
     private function generateRandomString($length) {
         $pattern = "ABCDEFGHIJKLMNPQRSTUVWXYZ";
         return substr(str_shuffle($pattern), 0, $length);

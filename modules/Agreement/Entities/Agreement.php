@@ -1,6 +1,7 @@
 <?php namespace Modules\Agreement\Entities;
    
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Agreement extends Model {
 
@@ -26,6 +27,23 @@ class Agreement extends Model {
 
     public function client() {
         return $this->belongsTo('Modules\Client\Entities\Client', 'client_id');
+    }
+
+    public static function getAgreementById($id) {
+
+        return DB::table('agreements')
+            ->join('status', 'agreements.agreement_status_id', '=', 'status.id')
+            ->join('clients', 'agreements.client_id', '=', 'clients.id')
+            ->join('countries', 'clients.countries_id', '=', 'countries.id')
+            ->join('cars', 'agreements.car_id', '=', 'cars.id')
+            ->join('brands', 'cars.brand_id', '=', 'brands.id')
+            ->join('prototypes', 'cars.prototype_id', '=', 'prototypes.id')
+            ->join('colors', 'cars.color_id', '=', 'colors.id')
+            ->where('agreements.id', '=', $id)
+            ->select('code', 'status.name as status','clients.firstname', 'clients.lastname', 'clients.firstname', 'clients.passport',
+                    'countries.name as country', 'registration_date', 'delivery_date', 'cash', 'brands.name as brand', 'prototypes.name as model', 'colors.name as color')
+            ->get();
+
     }
 
 }

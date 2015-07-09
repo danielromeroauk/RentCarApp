@@ -9,5 +9,7 @@ Route::group(['prefix' => 'agreement', 'namespace' => 'Modules\Agreement\Http\Co
     Route::put('/{agreement}', ['as' => 'agreement.update', 'uses' => 'AgreementController@update']);
     Route::delete('/{agreement}', ['as' => 'agreement.destroy', 'uses' => 'AgreementController@destroy']);
 
+    Route::get('/{agreement}/download-pdf', ['as' => 'agreement.pdf', 'uses' => 'AgreementController@printPdf']);
+
     Route::resource('status', 'AgreementStatusController');
 });
