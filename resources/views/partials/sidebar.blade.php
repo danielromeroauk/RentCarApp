@@ -13,6 +13,8 @@
             @if(Auth::check())
             <li class="active"><a href="{{ url('/dashboard') }}"><i class="fa fa-home"></i> <span>{{ trans('ui.sidebar.dashboard') }}</span></a></li>
             @endif
+
+                @if(Auth::check() && Auth::user()->hasRole('comercial'))
             <li class="menu-list"><a href=""><i class="fa fa-truck"></i> <span>{{ trans('ui.sidebar.label_car') }}</span></a>
                 <ul class="sub-menu-list">
                     @if(Auth::check() && Auth::user()->can(['create-cars', 'read-cars', 'update-cars', 'delete-cars']))
@@ -37,6 +39,7 @@
 
                 </ul>
             </li>
+                @endif
 
             @if(Auth::check() && Auth::user()->can(['create-clients', 'read-clients', 'update-clients', 'delete-clients']))
                 <li><a href="{{ url('client') }}"><i class="fa fa-users"></i> <span>{{ trans('ui.sidebar.clients') }}</span></a></li>

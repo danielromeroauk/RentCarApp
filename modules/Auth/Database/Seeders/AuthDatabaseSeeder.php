@@ -16,9 +16,9 @@ class AuthDatabaseSeeder extends Seeder {
 		$this->permissionsUserSeeder();
         $this->permissionsRoleSeeder();
         $this->permissionsSeeder();
-		$this->rolesSeeder();
-        $this->addPermissionRoleSeeder();
         $this->permissionsAllSeeder();
+        $this->rolesSeeder();
+        $this->addPermissionRoleSeeder();
 		$this->usersSeeder();
 		$this->roleUserSeeder();
 	}
@@ -181,6 +181,14 @@ class AuthDatabaseSeeder extends Seeder {
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ));
+
+        DB::table('roles')->insert(array(
+            'name' => 'comercial',
+            'display_name' => 'Comercial',
+            'description' => 'Administra todos los otros módulos',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
 	}
 
     private function addPermissionRoleSeeder(){
@@ -189,6 +197,13 @@ class AuthDatabaseSeeder extends Seeder {
             DB::table('permission_role')->insert(array(
                 'permission_id' => $i,
                 'role_id' => 1
+            ));
+        }
+
+        for($i=13; $i < 49; $i++){
+            DB::table('permission_role')->insert(array(
+                'permission_id' => $i,
+                'role_id' => 2
             ));
         }
     }
@@ -203,6 +218,15 @@ class AuthDatabaseSeeder extends Seeder {
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ));
+
+        DB::table('users')->insert(array(
+            'firstname' => 'Ana',
+            'lastname' => 'Matos Perez',
+            'email' => 'comercial@lara.app',
+            'password' => \Hash::make('comercial123'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ));
 	}
 
     private function roleUserSeeder(){
@@ -211,6 +235,11 @@ class AuthDatabaseSeeder extends Seeder {
                 'user_id' => 1,
                 'role_id' => 1
             ));
+
+        DB::table('role_user')->insert(array(
+            'user_id' => 2,
+            'role_id' => 2
+        ));
     }
 
 }
