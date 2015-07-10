@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Pingpong\Modules\Routing\Controller;
 
 class AuthController extends Controller {
@@ -10,16 +11,16 @@ class AuthController extends Controller {
 
         $this->middleware('guest', ['except' => 'getLogout']);
     }
-	
-	public function index() {
 
-		return view('auth::login');
-	}
+    public function index() {
+
+        return view('auth::login');
+    }
 
     public function postLogin(Request $request) {
 
         $this->validate($request, [
-            'email' => 'required|email', 'password' => 'required',
+            Config::get('auth.login') => 'required|email', 'password' => 'required',
         ]);
 
         $credentials = $this->getCredentials($request);
@@ -29,9 +30,9 @@ class AuthController extends Controller {
         }
 
         return redirect($this->loginPath())
-            ->withInput($request->only('email', 'remember'))
+            ->withInput($request->only(Config::get('auth.login'), 'remember'))
             ->withErrors([
-                'email' => $this->getFailedLoginMessage(),
+                Config::get('auth.login') => $this->getFailedLoginMessage(),
             ]);
     }
 
@@ -49,7 +50,7 @@ class AuthController extends Controller {
 
     private function getCredentials(Request $request) {
 
-        return $request->only('email', 'password');
+        return $request->only(Config::get('auth.login'), 'password');
     }
 
     private function redirectPath() {
@@ -63,7 +64,7 @@ class AuthController extends Controller {
 
     private function getFailedLoginMessage() {
 
-        return trans('auth::ui.login.credentials_error');
+        return trans('auth::ui.login.credentials_error', array('field' => Config::get('auth.login')));
     }
-	
+
 }

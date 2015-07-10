@@ -25,6 +25,7 @@ class AuthSetupTables extends Migration
             $table->increments('id');
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
+            $table->string('username')->nullable();
             $table->string('email')->nullable();
             $table->string('password')->nullable();
             $table->string('remember_token');

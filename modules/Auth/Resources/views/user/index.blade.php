@@ -31,6 +31,7 @@
                                 <tr>
                                     <th>{{ trans('auth::ui.user.firstname') }}</th>
                                     <th>{{ trans('auth::ui.user.lastname') }}</th>
+                                    <th>{{ trans('auth::ui.user.username') }}</th>
                                     <th>{{ trans('auth::ui.user.email') }}</th>
                                     <th>{{ trans('auth::ui.role.names') }}</th>
                                     @if(Auth::user()->can(['update-users', 'delete-users']))
@@ -44,6 +45,7 @@
                                     <tr class="gradeX">
                                         <td>{{ $user->firstname }}</td>
                                         <td>{{ $user->lastname }}</td>
+                                        <td>{{ $user->username }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td><ul>
                                                 @foreach($user->roles as $role)
@@ -76,6 +78,7 @@
                                 <tr>
                                     <th>{{ trans('auth::ui.user.firstname') }}</th>
                                     <th>{{ trans('auth::ui.user.lastname') }}</th>
+                                    <th>{{ trans('auth::ui.user.username') }}</th>
                                     <th>{{ trans('auth::ui.user.email') }}</th>
                                     <th>{{ trans('auth::ui.role.names') }}</th>
                                     @if(Auth::user()->can(['update-users', 'delete-users']))

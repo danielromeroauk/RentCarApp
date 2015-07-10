@@ -17,6 +17,7 @@
             </div>
             <div class="login-wrap">
                 <input type="text" class="form-control" name="email" placeholder={{ trans('auth::ui.login.email') }} autofocus>
+
                 <input type="password" class="form-control" name="password" placeholder={{ trans('auth::ui.login.password') }}>
 
                 <button class="btn btn-lg btn-login btn-block" type="submit">

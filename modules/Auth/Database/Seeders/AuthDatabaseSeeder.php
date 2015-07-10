@@ -213,7 +213,8 @@ class AuthDatabaseSeeder extends Seeder {
 		DB::table('users')->insert(array(
             'firstname' => 'Jose',
             'lastname' => 'Perez Lopez',
-            'email' => 'admin@lara.app',
+            'username' => 'admin',
+            'email' => 'admin@demo.com',
             'password' => \Hash::make('admin123'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -222,7 +223,8 @@ class AuthDatabaseSeeder extends Seeder {
         DB::table('users')->insert(array(
             'firstname' => 'Ana',
             'lastname' => 'Matos Perez',
-            'email' => 'comercial@lara.app',
+            'username' => 'comercial',
+            'email' => 'comercial@demo.com',
             'password' => \Hash::make('comercial123'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

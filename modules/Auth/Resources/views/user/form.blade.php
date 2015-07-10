@@ -17,6 +17,15 @@
 </div>
 
 <div class="form-group">
+    <label  class="col-lg-2 col-sm-2 control-label">{{ trans('auth::ui.user.username') }}</label>
+    <div class="col-lg-8">
+
+        {!! Form::text('username', null, ['class' => 'form-control']) !!}
+
+    </div>
+</div>
+
+<div class="form-group">
     <label  class="col-lg-2 col-sm-2 control-label">{{ trans('auth::ui.user.email') }}</label>
     <div class="col-lg-8">
 

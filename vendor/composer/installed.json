@@ -1289,92 +1289,6 @@
         ]
     },
     {
-        "name": "league/flysystem",
-        "version": "1.0.4",
-        "version_normalized": "1.0.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/thephpleague/flysystem.git",
-            "reference": "56862959b45131ad33e5a7727a25db19f2cf090b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/56862959b45131ad33e5a7727a25db19f2cf090b",
-            "reference": "56862959b45131ad33e5a7727a25db19f2cf090b",
-            "shasum": ""
-        },
-        "require": {
-            "ext-mbstring": "*",
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "ext-fileinfo": "*",
-            "league/phpunit-coverage-listener": "~1.1",
-            "mockery/mockery": "~0.9",
-            "phpspec/phpspec": "~2.0",
-            "phpspec/prophecy-phpunit": "~1.0",
-            "phpunit/phpunit": "~4.1",
-            "predis/predis": "~1.0",
-            "tedivm/stash": "~0.12.0"
-        },
-        "suggest": {
-            "ext-fileinfo": "Required for MimeType",
-            "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
-            "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
-            "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
-            "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
-            "league/flysystem-copy": "Allows you to use Copy.com storage",
-            "league/flysystem-dropbox": "Allows you to use Dropbox storage",
-            "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
-            "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
-            "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
-            "league/flysystem-webdav": "Allows you to use WebDAV storage",
-            "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
-            "predis/predis": "Allows you to use Predis for caching"
-        },
-        "time": "2015-06-07 21:27:37",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.1-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "League\\Flysystem\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Frank de Jonge",
-                "email": "info@frenky.net"
-            }
-        ],
-        "description": "Many filesystems, one API.",
-        "keywords": [
-            "Cloud Files",
-            "WebDAV",
-            "aws",
-            "cloud",
-            "copy.com",
-            "dropbox",
-            "file systems",
-            "files",
-            "filesystem",
-            "ftp",
-            "rackspace",
-            "remote",
-            "s3",
-            "sftp",
-            "storage"
-        ]
-    },
-    {
         "name": "jeremeamia/SuperClosure",
         "version": "2.1.0",
         "version_normalized": "2.1.0.0",
@@ -3190,128 +3104,6 @@
         ]
     },
     {
-        "name": "pingpong/modules",
-        "version": "v2.1.0",
-        "version_normalized": "2.1.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/pingpong-labs/modules.git",
-            "reference": "afcf6d3a913db1112962b265f862eedac851f16e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/afcf6d3a913db1112962b265f862eedac851f16e",
-            "reference": "afcf6d3a913db1112962b265f862eedac851f16e",
-            "shasum": ""
-        },
-        "require": {
-            "laravel/framework": "5.1.*",
-            "laravelcollective/html": "~5.0",
-            "php": ">=5.4.0",
-            "pingpong/generators": "2.1.*",
-            "pingpong/support": "2.1.*"
-        },
-        "require-dev": {
-            "mockery/mockery": "~0.9",
-            "phpunit/phpunit": "~4"
-        },
-        "time": "2015-06-27 17:17:44",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Pingpong\\Modules\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Pingpong Labs",
-                "email": "pingpong.labs@gmail.com"
-            }
-        ],
-        "description": "Laravel Modules",
-        "keywords": [
-            "hmvc",
-            "laravel",
-            "module",
-            "modules",
-            "pingpong"
-        ]
-    },
-    {
-        "name": "zizaco/entrust",
-        "version": "dev-laravel-5",
-        "version_normalized": "dev-laravel-5",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Zizaco/entrust.git",
-            "reference": "804000c1c535221792b4e173ecdcc02b5681f5ec"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Zizaco/entrust/zipball/804000c1c535221792b4e173ecdcc02b5681f5ec",
-            "reference": "804000c1c535221792b4e173ecdcc02b5681f5ec",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/console": "~5.0",
-            "illuminate/support": "~5.0",
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "illuminate/database": "~5.0",
-            "mockery/mockery": "dev-master",
-            "phpunit/phpunit": "~4.1",
-            "sami/sami": "dev-master"
-        },
-        "time": "2015-05-25 00:17:51",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/commands"
-            ],
-            "psr-4": {
-                "Zizaco\\Entrust\\": "src/Entrust/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Andrew Elkins",
-                "homepage": "http://andrewelkins.com"
-            },
-            {
-                "name": "Zizaco Zizuini",
-                "email": "zizaco@gmail.com"
-            },
-            {
-                "name": "Ben Batschelet",
-                "homepage": "http://github.com/bbatsche"
-            },
-            {
-                "name": "Michele Angioni",
-                "email": "michele.angioni@gmail.com"
-            }
-        ],
-        "description": "This package provides a flexible way to add Role-based Permissions to Laravel",
-        "keywords": [
-            "acl",
-            "auth",
-            "illuminate",
-            "laravel",
-            "permission",
-            "roles"
-        ]
-    },
-    {
         "name": "classpreloader/classpreloader",
         "version": "2.0.0",
         "version_normalized": "2.0.0.0",
@@ -3503,101 +3295,6 @@
             "phpunit",
             "testing",
             "xunit"
-        ]
-    },
-    {
-        "name": "pingpong/support",
-        "version": "v2.1.2",
-        "version_normalized": "2.1.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/pingpong-labs/support.git",
-            "reference": "ecb7eadb2e2e1635e716c91e53c186298acf2c18"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/pingpong-labs/support/zipball/ecb7eadb2e2e1635e716c91e53c186298acf2c18",
-            "reference": "ecb7eadb2e2e1635e716c91e53c186298acf2c18",
-            "shasum": ""
-        },
-        "require": {
-            "erusev/parsedown-extra": "0.7.*",
-            "illuminate/filesystem": "5.1.*",
-            "illuminate/support": "5.1.*",
-            "php": ">=5.4.0"
-        },
-        "time": "2015-06-30 05:12:03",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Pingpong\\Support\\": ""
-            },
-            "files": [
-                "helpers.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Pingpong Labs",
-                "email": "pingpong.labs@gmail.com"
-            }
-        ],
-        "description": "Support Component of Pingpong Sky Package"
-    },
-    {
-        "name": "pingpong/generators",
-        "version": "v2.1.3",
-        "version_normalized": "2.1.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/pingpong-labs/generators.git",
-            "reference": "2f3b1d69e58067a943e2b117f6ecc999fe75cddb"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/pingpong-labs/generators/zipball/2f3b1d69e58067a943e2b117f6ecc999fe75cddb",
-            "reference": "2f3b1d69e58067a943e2b117f6ecc999fe75cddb",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/dbal": "~2.5",
-            "illuminate/filesystem": "5.1.*",
-            "illuminate/support": "5.1.*",
-            "php": ">=5.4.0",
-            "pingpong/support": "2.1.*"
-        },
-        "require-dev": {
-            "mockery/mockery": "~0.9",
-            "phpunit/phpunit": "~4"
-        },
-        "time": "2015-06-30 08:19:05",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Pingpong\\Generators\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Pingpong Labs",
-                "email": "pingpong.labs@gmail.com"
-            }
-        ],
-        "description": "Laravel Generators",
-        "keywords": [
-            "generators",
-            "laravel",
-            "pingpong"
         ]
     },
     {
@@ -3914,6 +3611,306 @@
             "dompdf",
             "laravel",
             "pdf"
+        ]
+    },
+    {
+        "name": "league/flysystem",
+        "version": "1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/flysystem.git",
+            "reference": "e87d33ecc3a9fe2b1931856dc9921628f8c18cd5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/e87d33ecc3a9fe2b1931856dc9921628f8c18cd5",
+            "reference": "e87d33ecc3a9fe2b1931856dc9921628f8c18cd5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "ext-fileinfo": "*",
+            "mockery/mockery": "~0.9",
+            "phpspec/phpspec": "^2.2",
+            "phpspec/prophecy-phpunit": "~1.0",
+            "phpunit/phpunit": "~4.1"
+        },
+        "suggest": {
+            "ext-fileinfo": "Required for MimeType",
+            "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
+            "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
+            "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
+            "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
+            "league/flysystem-copy": "Allows you to use Copy.com storage",
+            "league/flysystem-dropbox": "Allows you to use Dropbox storage",
+            "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
+            "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
+            "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
+            "league/flysystem-webdav": "Allows you to use WebDAV storage",
+            "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter"
+        },
+        "time": "2015-07-08 20:43:57",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Flysystem\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Frank de Jonge",
+                "email": "info@frenky.net"
+            }
+        ],
+        "description": "Filesystem abstraction: Many filesystems, one API.",
+        "keywords": [
+            "Cloud Files",
+            "WebDAV",
+            "abstraction",
+            "aws",
+            "cloud",
+            "copy.com",
+            "dropbox",
+            "file systems",
+            "files",
+            "filesystem",
+            "filesystems",
+            "ftp",
+            "rackspace",
+            "remote",
+            "s3",
+            "sftp",
+            "storage"
+        ]
+    },
+    {
+        "name": "pingpong/support",
+        "version": "v2.1.4",
+        "version_normalized": "2.1.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pingpong-labs/support.git",
+            "reference": "ecb7eadb2e2e1635e716c91e53c186298acf2c18"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/pingpong-labs/support/zipball/ecb7eadb2e2e1635e716c91e53c186298acf2c18",
+            "reference": "ecb7eadb2e2e1635e716c91e53c186298acf2c18",
+            "shasum": ""
+        },
+        "require": {
+            "erusev/parsedown-extra": "0.7.*",
+            "illuminate/filesystem": "5.1.*",
+            "illuminate/support": "5.1.*",
+            "php": ">=5.4.0"
+        },
+        "time": "2015-06-30 05:12:03",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Pingpong\\Support\\": ""
+            },
+            "files": [
+                "helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Pingpong Labs",
+                "email": "pingpong.labs@gmail.com"
+            }
+        ],
+        "description": "Support Component of Pingpong Sky Package"
+    },
+    {
+        "name": "pingpong/generators",
+        "version": "v2.1.4",
+        "version_normalized": "2.1.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pingpong-labs/generators.git",
+            "reference": "bbf756b633da361f99af52bcf5620f671c86e3a1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/pingpong-labs/generators/zipball/bbf756b633da361f99af52bcf5620f671c86e3a1",
+            "reference": "bbf756b633da361f99af52bcf5620f671c86e3a1",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/dbal": "~2.5",
+            "illuminate/filesystem": "5.1.*",
+            "illuminate/support": "5.1.*",
+            "php": ">=5.4.0",
+            "pingpong/support": "2.1.*"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~4"
+        },
+        "time": "2015-07-02 04:19:47",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Pingpong\\Generators\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Pingpong Labs",
+                "email": "pingpong.labs@gmail.com"
+            }
+        ],
+        "description": "Laravel Generators",
+        "keywords": [
+            "generators",
+            "laravel",
+            "pingpong"
+        ]
+    },
+    {
+        "name": "pingpong/modules",
+        "version": "v2.1.4",
+        "version_normalized": "2.1.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pingpong-labs/modules.git",
+            "reference": "00c8d86611d5442d49aa2e06ecd5084a1c2d9b6b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/00c8d86611d5442d49aa2e06ecd5084a1c2d9b6b",
+            "reference": "00c8d86611d5442d49aa2e06ecd5084a1c2d9b6b",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/framework": "5.1.*",
+            "laravelcollective/html": "~5.0",
+            "php": ">=5.4.0",
+            "pingpong/generators": "2.1.*",
+            "pingpong/support": "2.1.*"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~4"
+        },
+        "time": "2015-06-30 08:35:01",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Pingpong\\Modules\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Pingpong Labs",
+                "email": "pingpong.labs@gmail.com"
+            }
+        ],
+        "description": "Laravel Modules",
+        "keywords": [
+            "hmvc",
+            "laravel",
+            "module",
+            "modules",
+            "pingpong"
+        ]
+    },
+    {
+        "name": "zizaco/entrust",
+        "version": "dev-laravel-5",
+        "version_normalized": "dev-laravel-5",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Zizaco/entrust.git",
+            "reference": "3a768eb52300ec4efe9d6a6685b9bf0db6a50ffd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Zizaco/entrust/zipball/3a768eb52300ec4efe9d6a6685b9bf0db6a50ffd",
+            "reference": "3a768eb52300ec4efe9d6a6685b9bf0db6a50ffd",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/console": "~5.0",
+            "illuminate/support": "~5.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "illuminate/database": "~5.0",
+            "mockery/mockery": "dev-master",
+            "phpunit/phpunit": "~4.1",
+            "sami/sami": "dev-master"
+        },
+        "time": "2015-07-09 16:32:53",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/commands"
+            ],
+            "psr-4": {
+                "Zizaco\\Entrust\\": "src/Entrust/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andrew Elkins",
+                "homepage": "http://andrewelkins.com"
+            },
+            {
+                "name": "Zizaco Zizuini",
+                "email": "zizaco@gmail.com"
+            },
+            {
+                "name": "Ben Batschelet",
+                "homepage": "http://github.com/bbatsche"
+            },
+            {
+                "name": "Michele Angioni",
+                "email": "michele.angioni@gmail.com"
+            }
+        ],
+        "description": "This package provides a flexible way to add Role-based Permissions to Laravel",
+        "keywords": [
+            "acl",
+            "auth",
+            "illuminate",
+            "laravel",
+            "permission",
+            "roles"
         ]
     }
 ]

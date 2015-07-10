@@ -41,6 +41,7 @@ return [
         'names'                 =>  'Usuarios',
         'firstname'             =>  'Nombre',
         'lastname'              =>  'Apellidos',
+        'username'              =>  'Nombre de Usuario',
         'email'                 =>  'Correo',
         'password'              =>  'Contraseña',
         'password_confirmation' =>  'Confirmar Contraseña',
@@ -64,8 +65,9 @@ return [
         'signin'                =>  'Iniciar Sesión',
         'rememberme'            =>  'Recuérdame',
         'email'                 =>  'Correo',
+        'username'              =>  'Usuario',
         'password'              =>  'Contraseña',
-        'credentials_error'     =>  'El correo o la contraseña no son correctos'
+        'credentials_error'     =>  'El :field o la contraseña no son correctos'
     ],
 
 ];

@@ -46,6 +46,7 @@ class UserController extends Controller {
             $data = User::create([
                 'firstname' =>  $request->input('firstname'),
                 'lastname'  =>  $request->input('lastname'),
+                'username'  =>  $request->input('username'),
                 'email'     =>  $request->input('email'),
                 'password'  =>  \Hash::make($request->input('password')),
             ]);
@@ -85,6 +86,7 @@ class UserController extends Controller {
             $data = ! $request->has('password') ? $request->except('password') : array(
                     'firstname' =>  $request->input('firstname'),
                     'lastname'  =>  $request->input('lastname'),
+                    'username'  =>  $request->input('username'),
                     'email'     =>  $request->input('email'),
                     'password'  =>  \Hash::make($request->input('password')),
             );
