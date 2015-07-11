@@ -25,3 +25,20 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+## Documentación de la aplicación RentCarApp:
+
+RentCarApp es una aplicación de gestión de alquiler de coches, en la cual existen clientes que quieren alquilar un coche por un tiempo determinado, existen dos roles dentro de la aplicación, el rol de admin que se encarga de gestionar los usuarios que pueden usar la aplicación y el rol de comercial, que se encarga realizar el registro del alquiler de coche.
+
+Instalación: 
+Descargar o clonar el proyecto, crear el archivo .env y poner información necesaria sobre la base de datos, por ultimo teclear el comando php artisan app:install dentro de la carpeta del proyecto para realizar las migraciones de la base de datos.
+
+Acceso al Sistema:
+Role Admin:
+email: admin@demo.com
+password: admin123
+
+Role Comercial:
+email: comercial@demo.com
+password: comercial123
+
