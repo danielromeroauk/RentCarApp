@@ -1,5 +1,7 @@
 <?php namespace Modules\Dashboard\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Modules\Dashboard\Entities\Dashboard;
 use Pingpong\Modules\Routing\Controller;
 
 class DashboardController extends Controller {
@@ -9,8 +11,23 @@ class DashboardController extends Controller {
         $this->middleware('auth');
     }
 	
-	public function index()
-	{
-		return view('dashboard::index');
+	public function index() {
+
+		if (Auth::user()->hasRole('admin')) {
+
+			$data = Dashboard::getCountUsers();
+
+			return view('dashboard::dashboard_admin', compact('data'));
+
+		}
+
+		if (Auth::user()->hasRole('comercial')) {
+
+			$agreements = Dashboard::getUnfulfilledAgreements();
+
+			return view('dashboard::dashboard_comercial', compact('agreements'));
+		}
+
+
 	}
 }

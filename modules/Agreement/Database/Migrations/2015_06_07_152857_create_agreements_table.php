@@ -18,6 +18,7 @@ class CreateAgreementsTable extends Migration {
             $table->string('code');
             $table->integer('client_id');
             $table->integer('car_id');
+            $table->integer('status_id');
             $table->timestamp('registration_date');
             $table->timestamp('delivery_date');
             $table->decimal('cash');

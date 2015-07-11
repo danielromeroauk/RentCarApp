@@ -36,7 +36,7 @@
     <label  class="col-lg-2 col-sm-2 control-label">{{ trans('agreement::ui.status.name') }}</label>
     <div class="col-lg-8">
 
-        {!! Form::select('agreement_status_id', $status, null, ['class' => 'form-control']) !!}
+        {!! Form::select('status_id', $status, null, ['class' => 'form-control']) !!}
 
     </div>
 </div>

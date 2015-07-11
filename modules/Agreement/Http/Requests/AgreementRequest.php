@@ -24,7 +24,7 @@ class AgreementRequest extends FormRequest {
 		return [
             'client_id' => 'required',
             'car_id' => 'required',
-            'agreement_status_id' => 'required',
+            'status_id' => 'required',
             'registration_date' => 'required',
             'delivery_date' => 'required'
 		];

@@ -11,7 +11,7 @@ class Agreement extends Model {
         'code',
         'client_id',
         'car_id',
-        'agreement_status_id',
+        'status_id',
         'registration_date',
         'delivery_date',
         'cash'
@@ -22,7 +22,7 @@ class Agreement extends Model {
     }
 
     public function status() {
-        return $this->belongsTo('Modules\Agreement\Entities\AgreementStatus', 'agreement_status_id');
+        return $this->belongsTo('Modules\Agreement\Entities\AgreementStatus', 'status_id');
     }
 
     public function client() {
@@ -32,7 +32,7 @@ class Agreement extends Model {
     public static function getAgreementById($id) {
 
         return DB::table('agreements')
-            ->join('status', 'agreements.agreement_status_id', '=', 'status.id')
+            ->join('status', 'agreements.status_id', '=', 'status.id')
             ->join('clients', 'agreements.client_id', '=', 'clients.id')
             ->join('countries', 'clients.countries_id', '=', 'countries.id')
             ->join('cars', 'agreements.car_id', '=', 'cars.id')
@@ -40,8 +40,9 @@ class Agreement extends Model {
             ->join('prototypes', 'cars.prototype_id', '=', 'prototypes.id')
             ->join('colors', 'cars.color_id', '=', 'colors.id')
             ->where('agreements.id', '=', $id)
-            ->select('code', 'status.name as status','clients.firstname', 'clients.lastname', 'clients.firstname', 'clients.passport',
-                    'countries.name as country', 'registration_date', 'delivery_date', 'cash', 'brands.name as brand', 'prototypes.name as model', 'colors.name as color')
+            ->select('code', 'status.name as status','clients.firstname', 'clients.lastname', 'clients.passport',
+                    'countries.name as country', 'registration_date', 'delivery_date', 'cash', 'brands.name as brand',
+                    'prototypes.name as model', 'colors.name as color')
             ->get();
 
     }
